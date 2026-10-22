@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Just Found a Flaw Hiding in Most of the Web — It Sat There for 10 Years | Nodrits Blog</title>
+<meta name="description" content="PHP2Shell: two critical PHP vulnerabilities (CVE-2026-109618, CVE-2026-109619, CVSS 9.2) discovered with help from GPT-5.6 Sol and Gemini 4 Argon. Every PHP version since 5.4 is affected. What happened, why it matters, and how to patch.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Just Found a Flaw Hiding in Most of the Web — It Sat There for 10 Years">
+<meta property="og:description" content="Two critical PHP flaws, a CVSS score of 9.2, and a decade in hiding. The full story.">
+<meta property="og:image" content="../assets/img/php2shell-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>AI Just Found a Flaw Hiding in Most of the Web — It Sat There for 10 Years</h1>
+  <p class="meta">October 22, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/php2shell-card.png" alt="AI just found a flaw hiding in most of the web — it sat there for 10 years">
+
+  <p>Some of the most dangerous software bugs are not new. They are old — sitting quietly in code the whole world depends on, waiting for someone (or something) sharp enough to notice them. This week, that something was AI.</p>
+
+  <h2>What happened</h2>
+  <p>Security researchers have disclosed two critical vulnerabilities in PHP — the language that powers roughly 70% of all websites, including WordPress and a huge share of business sites. The flaws, tracked as <strong>CVE-2026-109618</strong> and <strong>CVE-2026-109619</strong> and nicknamed "PHP2Shell", carry a <strong>CVSS severity score of 9.2 out of 10</strong> and allow <strong>unauthenticated remote code execution</strong> — in plain terms, an attacker who never logs in can take over a vulnerable server.</p>
+  <p>Every PHP version since 5.4 is affected. The bugs are believed to have hidden in the codebase for over a decade. They were discovered with help from frontier AI models — GPT-5.6 Sol and Gemini 4 Argon — working alongside human researchers.</p>
+
+  <h2>Why everyone is taking this seriously</h2>
+  <blockquote>Cloud security firm Wiz has described PHP2Shell as among the most severe flaws in software history, and the NSA has urged operators to patch immediately — or take affected systems offline.</blockquote>
+  <p>Three things make this one different. First, <strong>scale</strong>: PHP runs most of the web, so the exposed surface is enormous. Second, <strong>access</strong>: no password or account is needed to exploit it. Third, <strong>speed</strong>: the same class of AI that helped find these flaws can also help attackers weaponize them — which compresses the safe window to patch from weeks into days.</p>
+
+  <h2>What you should do</h2>
+  <ul>
+    <li><strong>Patch now.</strong> Emergency fixes are available for PHP 8.2 and newer.</li>
+    <li><strong>On an older PHP version?</strong> There is no patch coming — upgrading is the only fix.</li>
+    <li><strong>Running WordPress or a PHP-based site?</strong> Ask your host or developer which PHP version your site runs, today.</li>
+    <li><strong>Don't wait for symptoms.</strong> Exploitation of a flaw like this leaves little visible trace until the damage is done.</li>
+  </ul>
+
+  <h2>The bigger story</h2>
+  <p>For years, the fear was that AI would write malware. PHP2Shell shows the other edge of the sword: AI reading millions of lines of mature code and spotting what a decade of human reviewers missed. Defenders got there first — this time. The race now is whether patching, auditing and defense can move at AI speed too. At Nodrits, this is exactly why we build AI-assisted review into our workflow: the tools that find the flaws should be working for the people who fix them.</p>
+  <p>AI found this flaw before hackers did — this time. Will defenders stay ahead? Tell us what you think.</p>
+
+  <div class="cta-box">
+    <h3>Not sure if your website is exposed?</h3>
+    <p>Nodrits Solutions builds and maintains secure websites, SaaS products and AI workflows for businesses. We can check your PHP version and patch status for you.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="sources">Sources: The Decoder and Computer Weekly reporting on the PHP2Shell disclosure (CVE-2026-109618 / CVE-2026-109619), Wiz analysis, NSA advisory. Published October 22, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
