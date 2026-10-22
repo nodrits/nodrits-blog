@@ -53,6 +53,7 @@ a:hover{text-decoration:underline}
 .article li{margin-bottom:8px}
 .article blockquote{border-left:4px solid var(--accent);background:var(--soft);padding:14px 18px;border-radius:0 10px 10px 0;margin:0 0 18px;font-size:17px}
 .sources{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
+.tags{font-size:15px;font-weight:600;color:var(--accent);margin-top:26px;line-height:1.9}
 .cta-box{background:linear-gradient(135deg,#0b2e25,#0e7c5c);color:#fff;border-radius:var(--radius);padding:26px;margin-top:34px}
 .cta-box h3{font-size:21px;margin-bottom:8px}
 .cta-box p{color:#d7efe7;font-size:16px;margin-bottom:16px}
