@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinese Hackers Used AI Agents to Mass-Hack 2,250 Companies After Breaching ConnectWise | Nodrits Blog</title>
+<meta name="description" content="China-aligned hackers broke into IT giant ConnectWise's cloud backup, stole customer credentials, and unleashed AI agents that attempted 3,000 sign-ins a minute — hitting around 2,250 organizations.">
+<meta name="keywords" content="ConnectWise breach, Storm-0940, AI agents hacking, ARTEX, Microsoft security blog, mass hack, cybersecurity news, AI cyberattack, ConnectWise cloud backup, Chinese hackers, credential theft">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/ai-agents-hack-thousands-of-companies.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chinese Hackers Used AI Agents to Mass-Hack 2,250 Companies After Breaching ConnectWise">
+<meta property="og:description" content="One stolen master key, 2,250 companies hit, 3,000 break-in attempts a minute — all driven by AI agents.">
+<meta property="og:image" content="../assets/img/ai-agents-hack-thousands-of-companies-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Chinese Hackers Used AI Agents to Mass-Hack 2,250 Companies After Breaching ConnectWise</h1>
+  <p class="meta">October 22, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/ai-agents-hack-thousands-of-companies-card.png" alt="Chinese Hackers Used AI Agents to Mass-Hack 2,250 Companies After Breaching ConnectWise">
+
+  <p>Hackers didn't break into thousands of companies one by one — they stole one master key and let AI do the break-ins. Security researchers at Microsoft say a China state-aligned hacking group broke into the cloud backup service of IT management giant ConnectWise, stole the application credentials linking ConnectWise to its corporate customers, and then turned AI agents loose: around <strong>2,250 organizations were hacked at a rate of almost 3,000 attempted sign-ins per minute</strong>. Microsoft warns that this speed gives defenders "little time to detect and respond."</p>
+
+  <h2>What happened</h2>
+  <p>According to Microsoft's threat-intelligence findings reported by TechCrunch on October 22, 2026, the group Microsoft tracks as <strong>Storm-0940</strong> — active since 2021 — breached ConnectWise's cloud backup environment and stole application credentials used to establish data links between ConnectWise and its customers, who rely on the service to back up company data.</p>
+  <p>With those credentials in hand, the attackers could log in to a customer's Microsoft-hosted environment <em>as if they were an authorized user</em> and access emails and other files. The targets spanned government, defense, energy, financial services and technology organizations worldwide.</p>
+  <p>The mass-hack was powered by <strong>ARTEX</strong>, an open-source AI framework that pairs with AI models to stress-test cyber defenses — automating everything from reconnaissance to data theft. Microsoft said the AI agents drove almost 3,000 attempted sign-ins per minute, and that high-level access was obtained at some organizations less than three hours after a target was selected. Most attempts were blocked, but the group established persistent access at multiple organizations. The same ARTEX tooling was also recently used in the compromise of South Korean financial systems, per CrowdStrike.</p>
+  <p>ConnectWise said evidence pointed to a China state-aligned group being responsible for the attack on its cloud backup, that it has isolated the affected application connections, and that it is restoring the service step by step. The company cautioned that customers' own Microsoft 365 environments may still carry unauthorized access the attackers established and must be reviewed separately.</p>
+
+  <h2>Why it matters</h2>
+  <p>This is the new shape of the supply-chain attack: one breach at a trusted IT provider becomes a master key to hundreds of customer networks. And AI changes the arithmetic — where a human team could work through a handful of targets a day, agents probed thousands of organizations at machine speed.</p>
+  <blockquote>"The speed of the mass-hacks gives defenders little time to detect and respond." — Microsoft, via TechCrunch</blockquote>
+  <p>The incident also lands in a week already battered by AI-accelerated security crises — the AI-discovered PHP2Shell flaws forcing governments to take websites offline, and a separate breach at developer platform Railway that had all users rotating secret keys. Attackers and defenders are both racing with AI now.</p>
+
+  <h2>What it means for you</h2>
+  <p>If your business relies on a managed IT provider or cloud backup service, your security is only as strong as theirs. Review who holds credentials into your systems, enforce multi-factor authentication on every privileged and application account, and strip unnecessary permissions from third-party app connections. After any provider breach, rotate credentials immediately — the attacker may already be inside your environment with a valid key. For developers: treat environment variables, API keys and OAuth grants like production passwords, with rotation plans ready.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The scariest part isn't that hackers used AI — it's that the AI did exactly what it was told, at a scale no human team could match. The next wave of cyberattacks won't look like a genius hacker at a keyboard; it will look like a fleet of agents trying three thousand doors a minute. The defense is unglamorous but works: least-privilege access, MFA everywhere, rotated secrets, and a healthy suspicion of any third party holding your keys. Question for the audience: <strong>if your IT provider was breached today, would you even know which doors they can still open into your business?</strong></p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#ConnectWiseBreach #Storm0940 #AICyberattack #CybersecurityNews #DataBreach #AIAgents #InfoSec #ARTEX #CredentialTheft #NodritsSolutions</p>
+
+  <p class="sources">Sources: TechCrunch — "Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise" (Oct 22, 2026); Microsoft security blog findings on Storm-0940 and ARTEX; ConnectWise company statement. Published October 22, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
