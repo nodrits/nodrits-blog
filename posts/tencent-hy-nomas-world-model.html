@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tencent's Hy-Nomas Lets You Direct an Entire Video World — on a Single RTX 4090 | Nodrits Blog</title>
+<meta name="description" content="Tencent's Hunyuan team has open-sourced Hy-Nomas, a free-form interactive world-generation video model. Type text instructions and camera moves, and it builds a persistent world segment by segment — distilled to run on one RTX 4090.">
+<meta name="keywords" content="Tencent Hy-Nomas, Hy-Nomas, Hunyuan world model, interactive video generation, open source video model, world model RTX 4090, AI video world, Tencent Hugging Face, AI video generation">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/tencent-hy-nomas-world-model.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tencent's Hy-Nomas Lets You Direct an Entire Video World — on a Single RTX 4090">
+<meta property="og:description" content="Tencent's Hunyuan team has open-sourced Hy-Nomas, a free-form interactive world-generation video model. Type text instructions and camera moves, and it builds a persistent world segment by segment — distilled to run on one RTX 4090.">
+<meta property="og:image" content="../assets/img/tencent-hy-nomas-world-model-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Tencent's Hy-Nomas Lets You Direct an Entire Video World — on a Single RTX 4090</h1>
+  <p class="meta">October 24, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/tencent-hy-nomas-world-model-card.png" alt="Tencent's Hy-Nomas Lets You Direct an Entire Video World — on a Single RTX 4090">
+
+  <p>Tencent's Hunyuan team has released <strong>Hy-Nomas</strong> ("Towards Free-Form Interactive World Generation") as open weights on Hugging Face — an AI video model that doesn't just generate a clip, it builds a <em>world</em>. You direct it segment by segment with plain text instructions — "introduce a bridge", "change the scene to night", "move the camera forward" — and a persistent key/value cache keeps the world coherent across every turn, so earlier scenes are "remembered" as the story continues. And here's the part that matters: a distilled single-GPU configuration runs it on <strong>one NVIDIA GeForce RTX 4090</strong> — no data center, no rented GPU cluster, just a gaming rig.</p>
+
+  <h2>What happened</h2>
+  <p>This week, the tencent/Hy-Nomas repository appeared on Hugging Face (listed and featured in the Oct 23, 2026 OutYet.ai daily AI model briefing), publishing the model card and demo for a new class of "interactive world model" from Tencent's Hunyuan research team. Unlike conventional text-to-video models that render one fixed prompt in a single pass, Hy-Nomas is segment-autoregressive: you guide generation in multiple turns, feeding new text instructions and camera trajectories between segments, and the model's persistent KV cache carries context forward so objects, styles, and locations stay consistent as the world evolves.</p>
+
+  <h2>Why it matters</h2>
+  <p>Interactive world models are the engine underneath the next wave of gaming, simulation, and real-time content — and they've historically been the most compute-hungry corner of AI. Hy-Nomas matters for two reasons: first, the open weights (under Tencent's Hunyuan community license) put that capability in everyone's hands, not just well-funded labs; second, the distilled inference path (8 denoising steps at 720×1280, 24 FPS, with INT8 DiT weights, an INT8 KV cache, an FP8 decoder, and CPU offload) proves a world model can run on a single consumer GPU. The model card also notes LoRA adaptation for specialized domains like robotics simulation — meaning this isn't just a demo toy, it's a starting point teams can specialize.</p>
+
+  <h2>Key details</h2>
+  <p>The architecture combines a segment-autoregressive diffusion transformer (DiT), a Qwen text encoder, camera-conditioning modules for viewpoint control, and a PixelUMM video decoder. Interaction is two-fold: natural-language instructions (introduce objects, change styles or scenes, describe actions) and camera trajectories that steer the viewpoint. A standard sequence-parallel configuration is also available for those who do have more hardware. A web demo is live on the Hugging Face repo page. Natural use cases called out include game worlds, robotics simulation, and filmmakers and creators who want directable, evolving scenes.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you build games, you now have an open-world-prototyping sandbox that runs on commodity hardware — sketch levels, camera moves, and scene changes with text before a single asset is modeled. For robotics and simulation teams, the LoRA-adaptation path means you can specialize this model to your domain. And for creators and marketers, "film it by describing it" is inching from a gimmick toward a workflow: directable, persistent video worlds are exactly what pre-visualization, concept trailers, and interactive experiences need.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The real story isn't the demo quality — it's the economics. A world model that runs on one RTX 4090 turns interactive world generation from a research luxury into a developer tool. Open weights plus a consumer-GPU runtime is the combination that creates an ecosystem: expect game jams, simulation plugins, and indie tools built on Hy-Nomas within weeks. The question isn't whether this changes world-building — it's who gets good at directing AI worlds first. What's your take — is the future of content creation "directing" rather than "designing"? Drop your thoughts in the comments. 👇</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#HyNomas #Tencent #Hunyuan #WorldModel #AIVideo #OpenSource #OpenWeights #HuggingFace #RTX4090 #NodritsSolutions</p>
+
+  <p class="sources">Sources: the official tencent/Hy-Nomas model page on Hugging Face (architecture, single-GPU RTX 4090 configuration, web demo) and the OutYet.ai daily AI model briefing for Oct 23, 2026 (listing and feature details). Published October 24, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
