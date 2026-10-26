@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One AI Model Needs 59 Computer Chips to Run | Nodrits Blog</title>
+<meta name="description" content="Cerebras published the wafer math for running Moonshot’s 3-trillion-parameter Kimi K3: 59 WSE-3T wafers, 4-bit quantization, and a target of 1,000 to 2,000-plus tokens per second.">
+<meta name="keywords" content="Cerebras, Kimi K3, Moonshot AI, wafer-scale, WSE-3T, AI inference, trillion parameter model">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/cerebras-59-wafers-kimi.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One AI Model Needs 59 Computer Chips to Run">
+<meta property="og:description" content="Cerebras published the wafer math for running Moonshot’s 3-trillion-parameter Kimi K3: 59 WSE-3T wafers, 4-bit quantization, and a target of 1,000 to 2,000-plus tokens per second.">
+<meta property="og:image" content="../assets/img/cerebras-59-wafers-kimi-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>One AI Model Needs 59 Computer Chips to Run</h1>
+  <p class="meta">October 26, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/cerebras-59-wafers-kimi-card.png" alt="One AI Model Needs 59 Computer Chips to Run">
+
+  <p>How do you run a model with three trillion parameters? Cerebras has published the answer in wafer math: split Moonshot AI’s Kimi K3 across 59 of its wafer-scale chips, keep the weights parked on chip, and move only activations between stages — targeting 1,000 to 2,000-plus tokens per second.</p>
+
+  <h2>What happened</h2>
+  <p>In a technical post dated October 22, 2026, Cerebras walks through how its WSE-3T wafers serve trillion-parameter models, using the roughly 3-trillion-parameter Kimi K3 as the worked example. Each wafer holds 44 GB of on-chip memory, and at 4-bit weight quantization each of Kimi K3’s 93 layers is about 16 GB. Dense layers need extra room for a key-value cache, so one dense layer occupies a full wafer; linear-attention layers keep a small fixed-size state, so two fit on a wafer. Kimi K3 has 69 linear layers and 24 dense layers: 35 wafers for the linear layers plus 24 for the dense layers, 59 total.</p><p>The wafers connect in a pipeline, with activations moving between wafers via RDMA over Ethernet at about 2 microseconds per hop. Weights stay on the chips. Cerebras itself is careful about what this is: an illustrative deployment recipe, not a measured public demonstration serving real users, and it does not publish a tokens-per-second-per-megawatt figure for this layout.</p>
+
+  <h2>Why it matters</h2>
+  <p>Frontier inference is becoming an exercise in keeping weights still and moving as little else as possible. Giant models no longer fit on one chip or one server, and the honest metric is speed per watt at matched speed — a number this post does not give. Still, the recipe is the point: the model is no longer the hard part. The plumbing is. And as open-weight giants get cheaper to run, the cost floor for frontier-adjacent intelligence keeps falling.</p>
+
+  <h2>What it means for you</h2>
+  <p>Rent the recipe and watch the meter. Ask vendors for speed per watt, not just speed, and plan for models that keep growing rather than shrinking. Open-weight giants still need serious hardware — but the direction is clear, and it favors teams that design for cheap, fast inference from day one.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The model is no longer the hard part; the plumbing around it is. Will giant open models beat the closed labs on cost alone? Tell us your take in the comments.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Cerebras #KimiK3 #MoonshotAI #WaferScale #AIChips #AIInference #OpenWeights #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Cerebras technical post (October 22, 2026); LavX News, Daily Inference and ai0.news coverage (October 25, 2026).. Published October 26, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
