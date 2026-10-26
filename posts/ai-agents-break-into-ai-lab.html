@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agents Penetrated Anthropic's Internal Systems in Under 12 Hours | Nodrits Blog</title>
+<meta name="description" content="Cybersecurity startup Cathedral says its AI agents got inside Anthropic's internal sales, HR and IT systems in under 12 hours — and Anthropic confirmed it. What was accessed, what was not, and why Washington is worried.">
+<meta name="keywords" content="Anthropic, Cathedral, AI agents, cybersecurity, bug bounty, Claude AI, AI security, enterprise software vulnerabilities, AI hacking">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/ai-agents-break-into-ai-lab.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Agents Penetrated Anthropic's Internal Systems in Under 12 Hours">
+<meta property="og:description" content="Cybersecurity startup Cathedral says its AI agents got inside Anthropic's internal sales, HR and IT systems in under 12 hours — and Anthropic confirmed it. What was accessed, what was not, and why Washington is worried.">
+<meta property="og:image" content="../assets/img/ai-agents-break-into-ai-lab-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>AI Agents Penetrated Anthropic's Internal Systems in Under 12 Hours</h1>
+  <p class="meta">October 26, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/ai-agents-break-into-ai-lab-card.png" alt="AI Agents Penetrated Anthropic's Internal Systems in Under 12 Hours">
+
+  <p>AI agents have now done to a top AI lab what security experts feared they would do to everyone else. Cybersecurity startup Cathedral says its researchers got inside Anthropic's internal systems in under 12 hours by running AI agents against flaws in ordinary business software — and Anthropic has confirmed the access happened. The twist: this was not a hostile attack. It was a sanctioned security test, and the argument now is about what it really proves.</p>
+
+  <h2>What happened</h2>
+  <p>According to a draft Cathedral report reviewed by The Washington Post, Cathedral's researchers exploited vulnerabilities in business software that Anthropic — and many other companies — use for administrative and sales tasks. After running AI agents for less than 12 hours, they found paths to internal Anthropic data including meeting transcripts, details of salaries and job offers, and Slack messages discussing the company's advanced AI models.</p>
+  <p>Cathedral probed Anthropic under the company's own program that invites outside cybersecurity experts to test its systems, and disclosed its findings to Anthropic earlier this month. The startup also informed the vendors of the business software it exploited, though their identities were not disclosed for security reasons.</p>
+  <p>Anthropic confirmed in a statement that Cathedral's researchers had gained access to "a limited set" of its sales, human resources and IT systems, including business contact details for some customers and partners and some basic user account records. Crucially, the researchers could not access messages sent by customers to Anthropic's AI models, the responses sent back, or the code or "model weights" behind its AI systems. Anthropic said its own monitoring flagged some of Cathedral's activity before the report arrived, that it shut off their access the same day, and that it disabled the business software involved until the vendors confirmed the vulnerabilities had been addressed. The company also briefed federal officials and said it has "no evidence that anyone exploited these vulnerabilities outside of Cathedral."</p>
+  <p>Anthropic pushed back on Cathedral's framing, saying the startup had overstated the "implied national security implications" of its findings and had not fully followed the rules of its bug bounty program by failing to disclose all of its activity inside Anthropic's systems. Cathedral said in its report that "data accesses were kept to the absolute minimum in accordance with security research best practices."</p>
+
+  <h2>Why it matters</h2>
+  <p>The story landed in Washington like a warning shot. A senior Trump administration official, speaking anonymously, said the Cathedral report had circulated within the government and raised national security concerns: "If a bunch of kids who have just started a company can do this, then potentially, the Chinese aren't far behind." The official added he was taken aback by "how little time it took to get into the sensitive systems of a company that is controlling almost nuclear weapons grade material."</p>
+  <p>Independent eyes agree the finding is real, even if the spin is contested. Alex Stamos, chief information security officer at AI coding startup Cognition, reviewed Cathedral's findings at The Post's request and said: "They found something big here." He added that Cathedral's findings showed "a gap" in how Anthropic manages its use of outside software providers — "This is a really hard problem, but Anthropic could have done a lot better" — and warned that the risk of connecting third-party applications to company systems "is a humongous problem for everybody."</p>
+  <p>Cathedral itself is part of the story. The months-old startup was founded by former members of the U.S. DOGE Service; co-founder Gavin Kliger served as the Pentagon's chief data officer after his time at DOGE. It has raised $160 million, according to Pitchbook, has been valued by investors at $1.4 billion, counts Marc Andreessen and Shaun Maguire on its board, and has been contracted by three federal agencies for cybersecurity work. The context is a rough month for AI-lab security: the FBI earlier this month arrested an OpenAI employee for allegedly planting a recording device in an executive conference room, and last month hackers who broke into OpenAI with help from Anthropic's Claude chatbot warned that the AI industry is unprepared for the security risks created by its own technology.</p>
+
+  <h2>What it means for you</h2>
+  <p>The lesson is not about Anthropic alone — it is about the everyday software every business plugs into its systems. The entry point here was not some exotic AI vulnerability; it was flaws in ordinary enterprise tools used for admin and sales work, chained together by agents that never get tired. If your company connects third-party apps to internal systems — and almost every company does — those connections are now part of your security perimeter, and AI agents can probe them at machine speed. Audit which apps can read your internal data, revoke the ones nobody uses, and treat every integration as a door that needs its own lock.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>This is the moment AI security stopped being theoretical. The same agent technology that writes code and answers support tickets can now run a penetration test in half a day — and the company being tested is one of the best-defended in the world. The honest reading cuts both ways: the test was sanctioned, the crown jewels (model weights, customer chats) were never touched, and Anthropic caught some of it itself. But the door was still open, and it was opened by software nobody thinks of as dangerous. Security is no longer a feature you bolt on; it is the product.</p>
+  <p>Do AI agents make your company safer — or just make attacks faster? Drop your take below.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Anthropic #ClaudeAI #AIAgents #CyberSecurity #Cathedral #AISecurity #BugBounty #TechNews #USATech #NodritsSolutions</p>
+
+  <p class="sources">Sources: The Washington Post (Cathedral draft report reviewed by the Post; Anthropic statement; Alex Stamos and Trump administration official comments), as syndicated October 26, 2026. Published October 26, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
