@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Opens the Copilot Harness: The Engine Behind Every Copilot, Now in Foundry | Nodrits Blog</title>
+<meta name="description" content="Microsoft made its Copilot harness available through Foundry on October 28, 2026 — the multi-model orchestration layer behind Copilot Code, Copilot Studio and GitHub Copilot, now in public preview.">
+<meta name="keywords" content="Microsoft Copilot harness, Foundry, GitHub Copilot, AI agents, multi-model, Model Context Protocol, agent orchestration">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/microsoft-copilot-harness-foundry.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Microsoft Opens the Copilot Harness: The Engine Behind Every Copilot, Now in Foundry">
+<meta property="og:description" content="Microsoft made its Copilot harness available through Foundry on October 28, 2026 — the multi-model orchestration layer behind Copilot Code, Copilot Studio and GitHub Copilot, now in public preview.">
+<meta property="og:image" content="../assets/img/microsoft-copilot-harness-foundry-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Microsoft Opens the Copilot Harness: The Engine Behind Every Copilot, Now in Foundry</h1>
+  <p class="meta">October 29, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/microsoft-copilot-harness-foundry-card.png" alt="Microsoft Opens the Copilot Harness: The Engine Behind Every Copilot, Now in Foundry">
+
+  <p>Microsoft just opened the engine behind every Copilot. On October 28, 2026, the company made the Microsoft Copilot harness — the multi-model orchestration layer that already powers Copilot Code, Copilot Studio, the GitHub Copilot app, the Copilot CLI and VS Code — available to developers and enterprise customers through Microsoft Foundry.</p>
+
+  <h2>What happened</h2>
+  <p>Microsoft announced the Copilot harness in Foundry Agent Service in public preview on October 28, 2026, in a post on the Official Microsoft Blog, alongside general availability of long-running resilience for hosted agents. The company describes a harness as everything around the model: the orchestration layer that gives an agent the right instructions, context, execution environment and controls to accomplish work, with support for open standards such as the Model Context Protocol plus agent skills and agent plugins. The GitHub engineering team built the harness, and Microsoft has adopted it company-wide; the company also recently ported the harness runtime to Rust, reporting reduced session overhead and faster time-to-first-token, though without specific benchmark figures. The harness is built to perform across model families, with support for more than 20 frontier models plus bring-your-own-key, routing work to the right model or models based on the task. The Copilot SDK is available to download, and the harness can also run in the cloud managed by Foundry; Microsoft said its platforms remain open to other harnesses and frameworks. One pricing note from independent coverage: runtime charges are waived through November 30, 2026, with sandbox compute listed from December 1 at $0.0994 per vCPU-hour and memory at $0.0118 per GiB-hour, excluding model costs.</p>
+
+  <h2>Why it matters</h2>
+  <p>A frontier model today might fall behind tomorrow, and Microsoft's pitch is aimed squarely at that churn: building a harness or model router in-house is slow and hard to maintain, so the company is offering the one it already runs at scale. “If the model supplies the intelligence, the harness is everything around the model,” wrote Tina Schuchman, corporate vice president of Foundry, and Vladimir Fedorov, GitHub's chief technology officer. The division of labor is explicit: Microsoft runs the agent loop and sandbox, with governance and optimization built in, while customers supply the instructions, skills, tools and model choice. That division is also the trade-off noted by independent coverage — teams must select the harness when creating an agent, and existing agents cannot switch to it after creation, with less runtime control than a self-hosted loop.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you build agents, the practical move is to invest in what stays yours: reusable skills, explicit tool authentication and approvals, and instructions you can carry between models. Test agents inside the sandbox before production, keep the model swappable, and own your agent definitions — the harness may change, but your procedures are the asset.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The moat moves to the middle. If the model is interchangeable, the harness is the product — and Microsoft just gave its own away, on its own cloud. If one harness runs every agent, who owns the failure when it goes wrong? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Microsoft #Copilot #Foundry #GitHubCopilot #AIAgents #MultiModel #AgentOrchestration #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Microsoft Official Blog (October 28, 2026); Unite.AI, Visual Studio Magazine and LetsDataScience coverage; Superpower Daily for runtime pricing detail. Model-count and Rust performance claims are Microsoft's.. Published October 29, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
