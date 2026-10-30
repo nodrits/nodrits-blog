@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Linux Kernel Flaw Opens Remote Root Access on Servers | Nodrits Blog</title>
+<meta name="description" content="CVE-2026-98432: a critical 9.8-rated Linux kernel flaw lets unauthenticated attackers run commands as root on servers with MPTCP listeners — and an AI model built the exploit.">
+<meta name="keywords" content="Linux kernel vulnerability, CVE-2026-98432, MPTCP, remote root exploit, Linux security, Ubuntu, Red Hat, server security, cybersecurity">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/linux-kernel-remote-root-flaw.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Critical Linux Kernel Flaw Opens Remote Root Access on Servers">
+<meta property="og:description" content="CVE-2026-98432: a critical 9.8-rated Linux kernel flaw lets unauthenticated attackers run commands as root on servers with MPTCP listeners — and an AI model built the exploit.">
+<meta property="og:image" content="../assets/img/linux-kernel-remote-root-flaw-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Critical Linux Kernel Flaw Opens Remote Root Access on Servers</h1>
+  <p class="meta">October 31, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/linux-kernel-remote-root-flaw-card.png" alt="Critical Linux Kernel Flaw Opens Remote Root Access on Servers">
+
+  <p>A critical flaw in the Linux kernel — the code at the heart of millions of servers — can let an attacker with no login at all run commands as root, the highest level of control on a machine. Tracked as CVE-2026-98432, it scores 9.8 out of 10 for severity, and the working exploit was built by an AI model.</p>
+
+  <h2>What happened</h2>
+  <p>The flaw is a use-after-free bug in the kernel's IPv4 TCP networking code, caused by a race condition in how the kernel handles TCP connection requests. In plain terms, two parts of the kernel can touch the same piece of connection memory at once, and one of them can end up reading memory that has already been freed. Anthropic researchers demonstrated the full chain: leak kernel memory, bypass KASLR (the protection that hides where key kernel code sits), hijack the kernel's control flow, and run an attacker-chosen command as root — all against a server running a Multipath TCP (MPTCP) listener. Their proof of concept took about 53 minutes from the first leak to root command execution.</p>
+  <p>MPTCP lets one connection use several network paths at once, such as Wi-Fi and mobile data. On Linux, applications must explicitly request it — except that since Go 1.24, Go programs enable MPTCP by default for the sockets they listen on, so some Go-based services may be running MPTCP listeners without their administrators knowing. The flaw affects Linux kernels dating back to version 4.4, including widely used distributions such as Ubuntu, Red Hat Enterprise Linux (RHEL) and Rocky Linux. It does not affect macOS, which uses Apple's XNU kernel rather than the Linux kernel.</p>
+  <p>There is an honest disagreement about how bad this is. The Linux kernel's own CVE team rates it 9.8, while Red Hat rates it 5.9, treating it as a potential denial-of-service issue because exploiting the race is complex. Anthropic's demonstration is what tips it toward the serious end: the race can be won, repeatedly, until it works. As of October 30, there were no confirmed reports of the flaw being exploited in the wild, and it had not appeared in CISA's Known Exploited Vulnerabilities catalog.</p>
+
+  <h2>Why it matters</h2>
+  <p>Linux runs a huge share of the internet's servers, cloud instances and network appliances, so a remote-root flaw in its networking code is about as broad as vulnerabilities get. The attack needs no password, no clicked link and no user interaction — just a reachable service. And the exploit itself is a milestone: an unreleased Claude research model found the bug and built the attack, showing that AI can now do end-to-end vulnerability research on the world's most widely deployed software. That cuts both ways — defenders get faster discovery, but so does everyone else.</p>
+  <blockquote>"The flaw was patched upstream and backported to all maintained stable kernel branches." — Anthropic, on the fix status</blockquote>
+  <p>The patch picture is uneven. Fixed upstream kernels include 5.10.272, 5.15.223, 6.6.159, 6.1.190, 6.12.113, 6.18.56, 7.2.10 and 7.3-rc7, and Debian, Oracle Linux, Amazon Linux and SUSE have shipped fixes for some versions. But as of October 30, Ubuntu (22.04, 24.04, 26.04 and 26.10) still had kernel fixes in progress, and RHEL 8, 9 and 10 were listed as affected with fixes planned. Until your distribution ships its update, the exposure stays open.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you run Linux servers, check your kernel version and your distribution's security advisory now, and install the updated kernel package as soon as it lands. Check whether your servers run MPTCP listeners — especially Go-based services, where MPTCP may be on by default. For Go programs, the Go Security Team says setting GODEBUG=multipathtcp=0 disables MPTCP at runtime, but warns that turning it off program by program is fragile: a single exposed MPTCP listener still leaves a system vulnerable. While patches are pending, restrict server access to trusted networks and IP addresses, and consider firewall rules that block IPv4 TCP packets carrying IP options before they reach the vulnerable code. Note that disabling MPTCP alone is not enough, because the underlying flaw can also be triggered through ordinary TCP traffic.</p>
+  <p>For businesses that don't manage servers directly, the action is simpler: ask your hosting provider or IT team whether your systems are patched, and confirm it in writing. A flaw this broad is exactly the kind that gets swept into automated scanning within days of disclosure.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The scariest part of this story is not one bug — it is the speed. AI found the flaw, built the exploit, and proved root access in under an hour of machine time. Patching windows that used to be measured in weeks now need to be measured in days. If your patch process still runs on a monthly cycle, this is the story that should change it. Are you patching your servers the day fixes land, or still waiting for the monthly window? Tell us below.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#LinuxKernel #LinuxSecurity #CVE #CyberSecurity #ServerSecurity #OpenSource #Ubuntu #RedHat #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: BleepingComputer (October 30, 2026) on CVE-2026-98432 and the Anthropic exploit; CSO and The Hacker News corroborating the flaw, fixed kernel versions and distribution patch status; the Linux kernel CVE advisory; Anthropic's security research post (October 27, 2026); Go Security Team statement (October 29, 2026). Published October 31, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
