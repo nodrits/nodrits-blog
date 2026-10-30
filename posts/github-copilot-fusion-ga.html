@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Ships Copilot Fusion: Stop Picking the Model, Start Specifying the Task | Nodrits Blog</title>
+<meta name="description" content="GitHub made Copilot Fusion generally available on October 28, 2026 at GitHub Universe — a system that picks and combines AI models for each coding task, with three effort levels and a temporary 30% discount on model costs.">
+<meta name="keywords" content="GitHub Copilot Fusion, AI coding, model routing, GitHub Universe, Copilot, developer tools, HydraFusion, AI agents">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/github-copilot-fusion-ga.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub Ships Copilot Fusion: Stop Picking the Model, Start Specifying the Task">
+<meta property="og:description" content="GitHub made Copilot Fusion generally available on October 28, 2026 at GitHub Universe — a system that picks and combines AI models for each coding task, with three effort levels and a temporary 30% discount on model costs.">
+<meta property="og:image" content="../assets/img/github-copilot-fusion-ga-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>GitHub Ships Copilot Fusion: Stop Picking the Model, Start Specifying the Task</h1>
+  <p class="meta">October 30, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/github-copilot-fusion-ga-card.png" alt="GitHub Ships Copilot Fusion: Stop Picking the Model, Start Specifying the Task">
+
+  <p>Stop picking the AI model. GitHub made Copilot Fusion generally available on October 28, 2026, at its Universe conference in San Francisco — a system that decides, for each coding task, which models to use and how they should work together. Developers now choose only an effort level. The models sort themselves out.</p>
+
+  <h2>What happened</h2>
+  <p>Fusion combines GitHub's existing automatic model selection with the multi-model orchestration of Project HydraFusion, introduced as a research preview in September 2026. It is available on all Copilot plans in Visual Studio Code, the GitHub Copilot app, the Copilot command-line tool and JetBrains IDEs, with more clients coming. Instead of selecting a specific model, developers pick Copilot Fusion from the model picker and choose one of three effort levels: Standard for everyday tasks, High for harder work and deeper reasoning, and Max for the most demanding tasks. From there Fusion runs one of three execution patterns: Single, where one model completes the task; Cascade, where a cost-efficient model attempts it first and a quality check either accepts the result or escalates to a stronger model; and Critique, where one model drafts, another reviews, and the first revises. Enterprise administrators decide which models Fusion can draw from, can restrict models without disabling them for the wider team, and can make Fusion the default. GitHub Enterprise customers can now use every Copilot feature without a separate subscription, paying only for the AI credits they consume. For a limited period, paid Copilot subscribers get a 30% discount on model costs when using Fusion; GitHub has not published an end date. Preview users of the earlier auto and HydraFusion settings are moved to the matching Fusion effort level automatically. Alongside Fusion, GitHub released a Copilot app that runs agent work across multiple repositories, and published its annual Octoverse report: more than 40% of pull requests in September began as an agent's draft, up from 17% in March, and the platform now counts over 225 million developers, including 32 million in India.</p>
+
+  <h2>Why it matters</h2>
+  <p>The headline numbers are GitHub's own and should be read that way. GitHub says Fusion Max lands within two points of Claude Code running Opus 5.5 Max on the Artificial Analysis Coding Agent Index, at roughly half the API cost, half the tokens and about 40% less time per task; Microsoft CEO Satya Nadella went further on LinkedIn, per The Next Web, describing frontier-level quality at up to 77% lower cost. Those are vendor claims awaiting independent benchmarks — GitHub published cost, token and time figures only for the Max tier, leaving Standard and High without their own published comparison. But the mechanism is sound even if the numbers soften: most coding tasks do not need a frontier model, and the waste comes from developers defaulting to the expensive model “just in case” and forgetting to switch back — the exact pattern AT&T's Hari Pokhrel described, saying Fusion Standard has cut unnecessary spending across the company. The deeper shift is who arbitrates between models: Fusion makes GitHub the router, and the router, not the model, becomes the product.</p>
+
+  <h2>What it means for you</h2>
+  <p>Test it on your own code before trusting the chart. Pick one real task you would normally send to your favourite premium model, run it once on Fusion Standard and once on your usual model, and compare the result and the usage shown in your Copilot usage report. If the cheaper path holds up, make it the default for routine work and keep the premium model for the hard cases. If you manage a team, decide now which models Fusion is allowed to touch — and set effort levels per repository and task type the way you set CI budgets.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>Specification becomes the skill. When the router handles model choice, your leverage moves to writing intent, constraints and acceptance criteria clearly — a vague task routed brilliantly still produces vague code. Should developers give up picking the model, or is model choice a skill worth keeping? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#GitHub #CopilotFusion #AICoding #GitHubUniverse #DeveloperTools #ModelRouting #Octoverse #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: GitHub Universe announcement (October 28, 2026) via Neowin, Free Press Journal, The New Stack / Pivot News and Dev.to. Benchmark and cost figures are GitHub's own claims, flagged as such.. Published October 30, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
