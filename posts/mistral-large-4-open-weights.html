@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Trillion-Parameter AI You Can Download: Mistral Releases Large 4 Open Weights | Nodrits Blog</title>
+<meta name="description" content="Mistral released the weights of its trillion-parameter Large 4 model on October 29, 2026, a multimodal open-weight model built for coding agents and defensive cybersecurity, with one licence catch.">
+<meta name="keywords" content="Mistral, Mistral Large 4, Le Chonk, open weights, AI models, coding agents, cybersecurity, Hugging Face">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/mistral-large-4-open-weights.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Trillion-Parameter AI You Can Download: Mistral Releases Large 4 Open Weights">
+<meta property="og:description" content="Mistral released the weights of its trillion-parameter Large 4 model on October 29, 2026, a multimodal open-weight model built for coding agents and defensive cybersecurity, with one licence catch.">
+<meta property="og:image" content="../assets/img/mistral-large-4-open-weights-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>A Trillion-Parameter AI You Can Download: Mistral Releases Large 4 Open Weights</h1>
+  <p class="meta">November 1, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/mistral-large-4-open-weights-card.png" alt="A Trillion-Parameter AI You Can Download: Mistral Releases Large 4 Open Weights">
+
+  <p>A trillion-parameter AI you can download and run yourself is now real. Mistral released the weights of Mistral Large 4 — nicknamed Le Chonk — on October 29, 2026, three weeks after its public preview, making one of the largest open-weight models ever published available on Hugging Face.</p>
+
+  <h2>What happened</h2>
+  <p>Large 4 is a natively multimodal mixture-of-experts model: about 1 trillion total parameters, with only about 49 billion active for any given token (52 billion counting embeddings and output layers), routed through 128 experts with four active plus one shared expert per token. It offers a 1 million-token context window, text and image input, and three selectable reasoning levels. Mistral says it trained the model from scratch on 3,800 Nvidia Grace Blackwell GPUs in its own European data centres, and that the final checkpoint improved sharply over the October 6 preview after three more weeks of reinforcement learning — Terminal-Bench 4.0 up from 28% to 41%. On benchmarks, Mistral reports 48% on the Artificial Analysis Coding Agent Index — effectively tied with China's GLM-5.3, the top open model there, while using 47% fewer tokens per task — and 79–82% on CyberGym-E2E, a defensive cybersecurity suite. The API price was cut roughly in half from the preview: $0.70 per million input tokens and $2.10 per million output tokens. Microsoft Foundry is the first cloud to carry it, and Nvidia offers it as a NIM container.</p>
+
+  <h2>Why it matters</h2>
+  <p>Two things make this release matter beyond its size. First, it is pitched squarely at cyber defenders: Mistral says the model scores 51% on the Artificial Analysis Cyber Index and refused 96.6% of malicious cyber requests in its own tests, while a more aggressive penetration-testing variant stays restricted to vetted enterprise partners — an admission that a downloadable model this capable needs guardrails, and that published refusal rates describe the released configuration, not what a fine-tuned copy might do. Second, the licence is the catch everyone should read: the Mistral Ecosystem Open-Weight licence is a modified MIT licence — free to use, modify, fine-tune and commercialize, except that any business offering the model as a hosted service must first obtain a separate commercial licence from Mistral. You can own the weights; you cannot resell them as an API without permission. And every benchmark above is Mistral's own — a full technical report is still coming, and independent validation will take time.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you run a business with sensitive code or data, this is the week to test self-hosting seriously: download the weights, run them on your own infrastructure, and benchmark them on your real codebase before you switch anything. Keep your data in-house where it matters, compare cost per completed task rather than cost per token, and read the licence before you build a service on top of it — the model-as-a-service carve-out could decide your business model. For everyone else, the trend is the story: frontier-scale models are no longer only available through someone else's API.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>Frontier scale, downloadable, European-built — with a licence catch as the price of openness. That tension is the whole open-weight debate in one release. Does open-weight AI make you more likely to self-host, or is the cloud still easier? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Mistral #MistralLarge4 #LeChonk #OpenWeights #AIModels #CodingAI #Cybersecurity #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Mistral's release (October 29, 2026) via Hugging Face, TechCrunch, Crypto Briefing and Skimwire. Benchmark and pricing figures are Mistral's; independent evaluation is pending.. Published November 1, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
