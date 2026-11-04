@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Food-Delivery Giant Built a 1.6 Trillion Brain: Meituan's LongCat-2.5 | Nodrits Blog</title>
+<meta name="description" content="Meituan made LongCat-2.5 generally available on November 2, 2026: a 1.6-trillion-parameter multimodal model for long-horizon agent work, with a 1-million-token context window, at $0.30 per million input tokens — trained entirely on domestic Chinese accelerators.">
+<meta name="keywords" content="LongCat-2.5, Meituan, LongCat, AI model, agentic AI, 1M context window, Chinese AI chips, AI pricing">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/meituan-longcat-25-agent-model.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Food-Delivery Giant Built a 1.6 Trillion Brain: Meituan's LongCat-2.5">
+<meta property="og:description" content="Meituan made LongCat-2.5 generally available on November 2, 2026: a 1.6-trillion-parameter multimodal model for long-horizon agent work, with a 1-million-token context window, at $0.30 per million input tokens — trained entirely on domestic Chinese accelerators.">
+<meta property="og:image" content="../assets/img/meituan-longcat-25-agent-model-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>A Food-Delivery Giant Built a 1.6 Trillion Brain: Meituan's LongCat-2.5</h1>
+  <p class="meta">November 4, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/meituan-longcat-25-agent-model-card.png" alt="A Food-Delivery Giant Built a 1.6 Trillion Brain: Meituan's LongCat-2.5">
+
+  <p>A food-delivery giant built a 1.6 trillion brain. Meituan, the Chinese company best known for getting dinner to your door, made LongCat-2.5 generally available on November 2, 2026 — a frontier-scale model built for one job: keeping an AI agent productive across long, messy projects instead of single prompts.</p>
+
+  <h2>What happened</h2>
+  <p>According to Meituan's LongCat API platform changelog and the company's own pages, as covered by TechNode, Crypto Briefing, TheDevDrift and AI Weekly on November 2–3, 2026, LongCat-2.5 is a natively multimodal mixture-of-experts model with 1.6 trillion total parameters and roughly 48 billion activated per token. It offers a 1-million-token context window — enough to hold an entire codebase, multi-tab browser sessions and multi-stage workflows in working memory — and up to 128,000 tokens of output. It is aimed at long-horizon agentic work across terminals, browsers, GUIs, spreadsheets and design tools, following a preview released on September 25. The model is live through Meituan's chat service and API platform, which speaks both the OpenAI and Anthropic request formats, so it drops into an existing Claude Code or OpenAI-compatible harness by changing a base URL. Limited-time discounted pricing is $0.30 per million uncached input tokens, $0.006 per million cached input tokens and $1.20 per million output tokens. GitHub and Hugging Face releases of the weights are planned but have not happened — today the model is API-only.</p>
+
+  <h2>Why it matters</h2>
+  <p>Two things make this launch bigger than its spec sheet. First, Meituan says LongCat-2.5 was trained entirely on domestically produced Chinese AI accelerators, whose vendor it will not name — a frontier-scale model built without Nvidia hardware, inside the export-restriction regime that was supposed to make that hard. Second, the price: at $0.30 in and $1.20 out with a 1-million-token window, long agent runs become cheap to test, which is exactly the configuration sustained agent work bills against. The caveats matter as much as the claims. Meituan's benchmark positioning — between Claude Opus 4.8 and Opus 5, beating Opus 5 on some tests, beating GPT-5.6-Sol on 20 of 27 shared tests by one account — comes with no published benchmark tables and no independent evaluation yet, and much of the architectural detail people quote actually comes from the LongCat-2.0 report. Treat the capability claims as the company's until third parties verify them.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you run agents, this is a cheap experiment with a clear test. Point an existing harness at the API, give it a real multi-step job — a codebase task, a browser workflow, a spreadsheet pipeline — and measure sustained performance, not a single prompt. The 1-million-token window and near-free cached input are genuinely useful for long runs, but do not plan production around benchmark claims until independent tests land, and do not assume self-hosting: with no weights released, you are renting, not owning. If your roadmap depends on Nvidia-only infrastructure, note the strategic signal too — the supply chain for frontier models just got wider.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The agent race has a new supplier, and it delivers dumplings. A delivery company shipping a frontier agent model says everything about where AI value now sits: not in who trains the biggest model, but in who makes long, autonomous work cheap and reliable. Would you run your business agents on a model from a food-delivery company — or does the brand still matter? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#LongCat #Meituan #AIModel #AIAgent #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Meituan LongCat API platform changelog and pricing pages (November 2, 2026) via TechNode, Crypto Briefing, TheDevDrift and AI Weekly. Benchmark claims are Meituan's; no independent evaluation had been published at launch; weights are promised but not yet released.. Published November 4, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>

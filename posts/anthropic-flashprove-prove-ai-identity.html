@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Now AI Must Prove It Is Who It Claims: Anthropic's FlashProve | Nodrits Blog</title>
+<meta name="description" content="Anthropic published FlashProve on November 3, 2026: an open-source system that attaches a cryptographic proof to an AI answer, proving it came from one specific model — without revealing the model's private weights.">
+<meta name="keywords" content="FlashProve, Anthropic, provable inference, zkSNARK, AI model identity, cryptographic proof, AI trust, Llama 4 Maverick">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/anthropic-flashprove-prove-ai-identity.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Now AI Must Prove It Is Who It Claims: Anthropic's FlashProve">
+<meta property="og:description" content="Anthropic published FlashProve on November 3, 2026: an open-source system that attaches a cryptographic proof to an AI answer, proving it came from one specific model — without revealing the model's private weights.">
+<meta property="og:image" content="../assets/img/anthropic-flashprove-prove-ai-identity-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Now AI Must Prove It Is Who It Claims: Anthropic's FlashProve</h1>
+  <p class="meta">November 4, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/anthropic-flashprove-prove-ai-identity-card.png" alt="Now AI Must Prove It Is Who It Claims: Anthropic's FlashProve">
+
+  <p>Now AI must prove it is who it claims. Anthropic published FlashProve on November 3, 2026, an open-source system that attaches a cryptographic proof to an AI answer — a mathematical guarantee that the reply came from one specific model, not a cheaper stand-in.</p>
+
+  <h2>What happened</h2>
+  <p>According to a research blog post published Tuesday, as reported by TechCrunch on November 3, 2026, FlashProve provides what researchers call 'provable inference'. The system works in two phases. First, a lab publishes a short fingerprint — a commitment — of one exact set of model weights, generated in about 39 minutes under the reported configuration; the weights themselves stay hidden. Then, for each answer, the lab produces a proof, built on a hash-based zkSNARK (zero-knowledge succinct argument of knowledge), showing that those committed weights processed that prompt and produced those exact words. Anyone holding the commitment, the prompt and the reply can verify the proof without ever seeing the weights. Anthropic tested it on Meta's Llama 4 Maverick, a 400-billion-parameter mixture-of-experts model: proofs run at about 110 tokens per second on a single NVIDIA H100 GPU, each 1,024-token request produces a proof of roughly 19 MB, and verification takes seconds on a 24-core CPU. The code, Lean proofs and documentation are open source on GitHub under the Apache 2.0 licence.</p>
+
+  <h2>Why it matters</h2>
+  <p>The problem FlashProve targets is one most users never think about: today, nobody querying a hosted model can check that the response came from the model the developer claims is responding. A routing service could quietly swap in a cheaper model to save money, and nothing in the answer would give it away. FlashProve would be robust against impostors attempting to disguise one model as another — even when the impostor is the lab that built and runs the model — because any change to the weights or the arithmetic breaks verification. That makes it a tool for auditors, safety evaluators and procurement teams, not just researchers: a claim that a specific task was done by an advanced model could be checked, not merely trusted. The catch is the cost. Proving consumes roughly 70 to 95 times the GPU time of standard inference, and Anthropic says there are no plans to deploy it at Anthropic or any other lab — the team frames it as intermediate progress, not a finished agenda, and labels the repository not maintained.</p>
+
+  <h2>What it means for you</h2>
+  <p>Do not wait for FlashProve in your products — but do borrow its shape. If you buy AI through an API, start asking your vendors how you could verify which model served a request; the vendors that answer that question well will win the contracts where proof matters, from regulated industries to safety evaluations. Note the limits before you cite it: the system is designed for mixture-of-experts models, it hides weights but not architecture, proofs cover an integer-arithmetic representation that may differ from floating-point production runs, and you still have to trust that the published fingerprint belongs to the model the lab names. The receipt is only as honest as the commitment it checks.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>AI's trust problem was never the model. It was that nobody could check the receipt. FlashProve is slow and narrow today — and still the most honest idea in AI trust this week. Should every AI answer come with a proof of which model wrote it — or is trust in the provider enough? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#FlashProve #Anthropic #AI #CyberSecurity #ZeroKnowledge #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Anthropic FlashProve research post (November 3, 2026) via TechCrunch, Crypto Briefing and AlphaSignal. Proving overhead (70–95x GPU time), proof size (~19 MB per 1,024 tokens) and verification figures are Anthropic's reported results on Llama 4 Maverick; no lab plans to deploy the system.. Published November 4, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>

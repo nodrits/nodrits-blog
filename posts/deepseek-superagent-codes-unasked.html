@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI That Codes Without Being Asked: DeepSeek's Open-Source Super-Agent | Nodrits Blog</title>
+<meta name="description" content="DeepSeek published dsh-superagent on October 31, 2026: an MIT-licensed proactive coding agent that watches a GitHub repo and team chat, takes work it is allowed to take, and answers with pull requests — research code, not a product.">
+<meta name="keywords" content="DeepSeek, dsh-superagent, super-agent, coding agent, GitHub agent, DeepSeek Harness, AI coding, open source agent">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/deepseek-superagent-codes-unasked.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The AI That Codes Without Being Asked: DeepSeek's Open-Source Super-Agent">
+<meta property="og:description" content="DeepSeek published dsh-superagent on October 31, 2026: an MIT-licensed proactive coding agent that watches a GitHub repo and team chat, takes work it is allowed to take, and answers with pull requests — research code, not a product.">
+<meta property="og:image" content="../assets/img/deepseek-superagent-codes-unasked-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>The AI That Codes Without Being Asked: DeepSeek's Open-Source Super-Agent</h1>
+  <p class="meta">November 4, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/deepseek-superagent-codes-unasked-card.png" alt="The AI That Codes Without Being Asked: DeepSeek's Open-Source Super-Agent">
+
+  <p>The AI that codes without being asked is here — and its code is open for anyone to read. DeepSeek published dsh-superagent on October 31, 2026, a proactive coding agent for one GitHub repository that watches the repo and team chat, picks up work it is allowed to take, and answers in the original conversation, often with a pull request.</p>
+
+  <h2>What happened</h2>
+  <p>According to the project's README, as reported by Bloomberg via The Next Web and covered by OnTheWire, Skimwire and others on November 1–3, dsh-superagent is packaged as a bundle for DeepSeek Harness, the company's agent framework, and listens to GitHub and optionally to Feishu, the workplace chat app. When an authorised team member asks for something, it opens a work item — the project calls it a Ticket — handles it in its own isolated session and directory, and replies where the request was made. Underneath, a long-running Router handles conversation and decides what to dispatch, while separate Worker sessions do the actual coding in parallel. The code is MIT-licensed on GitHub, and the repository collected thousands of stars within its first day — around 3,800 in under 21 hours by one count, over 6,400 within roughly a day by another. DeepSeek's design principle is stated in bold in the docs: 'take as little human attention as possible, and give as much value as possible.'</p>
+
+  <h2>Why it matters</h2>
+  <p>This is a shape change, not just a feature. One developer prompting a chatbot is the old pattern; an agent that serves a whole team — triaging requests, running parallel workers, returning finished work — changes who does the coding and who reviews it. DeepSeek puts a number on the idea, though it is an in-house one: in its own simulation, the multi-session design finished the slowest 5% of tasks in 15.7 minutes against 29.5 minutes for a single-session agent, roughly 1.9 times quicker. The company is candid that the test used synthetic messages and simulated tools, and that real-world code quality was not measured. Bloomberg framed the release as a challenge to Anthropic's Claude Code, the most widely used agentic coding tool — and the framing matters because DeepSeek is giving the pattern away for free while its rivals sell it.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you run a development team, this is worth an afternoon, not a migration. Clone the repo, read the README, and run it against a sandbox repository first: it needs a separate GitHub account for the agent, a model provider configured for DeepSeek Harness, and, for chat requests, a Feishu or Lark bot. Treat the output like a junior developer's first week — review every pull request, keep the agent's permissions narrow, and write the team rules that decide what it may take on, because those rules are the real control surface. And note the companion design paper, Exploring Super-agent Design: Towards a More Autonomous Agent System — some of its ideas, including an external watchdog and an asynchronous reasoning loop, are future directions, not yet built.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The most interesting line in the whole release is not a feature. It is the admission that much of the agent's own engineering was done by coding agents. A lab open-sourcing a largely agent-built tool for managing other agents is a small but legible signal of where software work is going. Would you let an AI agent work your team's repo unsupervised — or does every pull request still need a human eye? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#DeepSeek #SuperAgent #AIAgent #CodingAgent #GitHub #OpenSource #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: DeepSeek dsh-superagent-prototype README on GitHub (October 31, 2026) via OnTheWire, Elets CIO (Bloomberg reporting), Skimwire, The Next Web and MarkTechPost. Star counts and the 15.7 vs 29.5 minute figures are as reported; the simulation used synthetic workloads and did not measure real-world code quality. DeepSeek labels the code a research prototype, not an official product.. Published November 4, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
