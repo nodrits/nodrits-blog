@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tencent's Hy4 Can See Your Screen and Use Your Computer — But It Refuses One Job | Nodrits Blog</title>
+<meta name="description" content="Tencent launched the full Hy4 model on November 4, 2026, adding vision and computer-use capabilities to its 770-billion-parameter model — while restricting its cybersecurity training to defensive uses only.">
+<meta name="keywords" content="Tencent Hy4, Hy4 model, Tencent AI, computer use AI, vision model, AI safety, enterprise AI, open-weight model">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/tencent-hy4-vision-computer-use.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tencent's Hy4 Can See Your Screen and Use Your Computer — But It Refuses One Job">
+<meta property="og:description" content="Tencent launched the full Hy4 model on November 4, 2026, adding vision and computer-use capabilities to its 770-billion-parameter model — while restricting its cybersecurity training to defensive uses only.">
+<meta property="og:image" content="../assets/img/tencent-hy4-vision-computer-use-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Tencent's Hy4 Can See Your Screen and Use Your Computer — But It Refuses One Job</h1>
+  <p class="meta">November 5, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/tencent-hy4-vision-computer-use-card.png" alt="Tencent's Hy4 Can See Your Screen and Use Your Computer — But It Refuses One Job">
+
+  <p>Tencent's new AI sees everything — but it won't do one thing. The company launched the full Hy4 model on November 4, 2026, giving its 770-billion-parameter model vision and the ability to operate computers — and, in the same announcement, explaining the one job it deliberately trained the model to refuse.</p>
+
+  <h2>What happened</h2>
+  <p>According to Tencent's announcement, as covered by Unite.AI, Reuters and others on November 4, 2026, Hy4 is the full release of the model previewed in August 2026. The preview was open-sourced at launch with 770 billion total parameters, 49 billion active per token and a 1-million-token context window; the full release substantially scales pre-training and post-training, with Tencent reporting gains over the preview in instruction following, long-context understanding, long-horizon tasks and deep research. The new capabilities are the headline: Hy4 can interpret fine-grained image details and complex charts, and it can operate across command-line and graphical interfaces. Targeted training covered Blender, CAD and long-horizon workflows spanning multiple applications, and Tencent's Interactive Entertainment Group helped curate game-development training data covering Unreal Engine, Unity and Godot. The model is available now through hosted APIs — Tencent Cloud and OpenRouter, and inside CodeBuddy, WorkBuddy, Yuanbao and ima — at unchanged list prices of $0.834 per million input tokens, $2.501 per million output tokens and $0.042 per million cached input tokens. The weights themselves, and a comprehensive system card, are promised for a later release, and a cheaper Hy4 Flash variant is planned.</p>
+
+  <h2>Why it matters</h2>
+  <p>Hy4 is aimed squarely at enterprise work, and Tencent's own evaluations show where it wants to compete. For finance, the company built thousands of realistic workspaces and tens of thousands of tasks, then evaluated the model with 213 finance professionals, including 153 experts from financial institutions, across 579 real-world tasks — ranking first among open-weight models with a score of 3.04, ahead of DeepSeek-V4.1-Flash at 2.97 and Kimi K3.1 Pro and GLM-5.3 at 2.68 each. Tencent also reports cutting hallucinations in internal search evaluations from 15.76% in the preview to 5.45%, and speculative errors from 23.1% to 5.6%. The safety story is the other half of the launch. During training, Tencent limited cybersecurity data to defensive proof-of-concept generation and vulnerability patching, filtering out exploit development, reverse engineering and penetration-testing material; its Xuanwu Lab and Keen Security Lab ran red-team audits, and the company reports no elevated risk in reversing cryptographic algorithms, defeating binary obfuscation or exploiting vulnerabilities. On Hy-BioExperimentBench it scores 30.4 out of 100, with reviewers finding limited ability to turn biological knowledge into actionable experimental protocols. Tencent is candid about the gap that remains to top proprietary models, particularly on research-level mathematics, long-horizon coding, model self-improvement and advanced visual question answering.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you build AI agents, the hosted API is the thing to test this week: vision plus computer use across real multi-application workflows is exactly the configuration enterprise agents bill against, and the 50% launch discount reported on some channels through December 31, 2026 makes experimentation cheap. Test it on your own tasks before trusting Tencent's finance and search numbers — those are company-run evaluations, not independent benchmarks. Do not plan a self-hosted rollout yet: the weights, the system card and the safety documentation are future deliverables, and until they land you are renting, not owning. And note the pricing discipline: list prices are unchanged from the preview, so the launch is about capability, not a price cut.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The most interesting line in this launch is not a capability. It is a refusal. A frontier lab publishing, in its launch material, exactly which cyber skills it filtered out of training — and inviting red-team audits of the result — is a small but legible shift in how AI safety gets sold. The test of that pledge comes when the weights ship: limits baked into training survive only if the open release carries them too. Would you trust an AI that can see your screen and click your mouse? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Tencent #Hy4 #AIModel #ComputerUse #AISafety #EnterpriseAI #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Tencent Hy4 announcement (November 4, 2026) via Unite.AI, Reuters reporting via TimesLive, TTN Finance and Emergent. Finance evaluation scores, hallucination figures and safety audit results are Tencent's own reported figures; weights and system card are promised, not yet released.. Published November 5, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
