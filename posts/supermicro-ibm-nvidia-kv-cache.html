@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your AI Forgets Everything It Just Computed — Three Giants Just Fixed That | Nodrits Blog</title>
+<meta name="description" content="Supermicro, IBM and NVIDIA announced a shared KV cache storage solution on November 5, 2026, reporting up to 56x faster time-to-first-token on 130,000-token prompts in joint testing.">
+<meta name="keywords" content="Supermicro KV cache, IBM NVIDIA KV cache, AI inference speed, time to first token, NVIDIA Dynamo, IBM Storage Scale">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/supermicro-ibm-nvidia-kv-cache.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Your AI Forgets Everything It Just Computed — Three Giants Just Fixed That">
+<meta property="og:description" content="Supermicro, IBM and NVIDIA announced a shared KV cache storage solution on November 5, 2026, reporting up to 56x faster time-to-first-token on 130,000-token prompts in joint testing.">
+<meta property="og:image" content="../assets/img/supermicro-ibm-nvidia-kv-cache-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Your AI Forgets Everything It Just Computed — Three Giants Just Fixed That</h1>
+  <p class="meta">November 6, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/supermicro-ibm-nvidia-kv-cache-card.png" alt="Your AI Forgets Everything It Just Computed — Three Giants Just Fixed That">
+
+  <p>Your AI forgets everything it just computed — and three giants just fixed that. Supermicro, IBM and NVIDIA announced a shared KV cache storage solution on November 5, 2026, that stops GPUs from recomputing context they have already processed. In joint testing, it delivered up to 56 times faster first responses on long prompts.</p>
+
+  <h2>What happened</h2>
+  <p>Supermicro announced the solution on November 5, 2026, in a PR Newswire release from San Jose, as covered by Unite.AI and Crypto Briefing the same day. The joint system combines four pieces: Supermicro Petascale all-flash storage servers using AMD EPYC 9005 Series processors, IBM Storage Scale software, NVIDIA's Dynamo inference framework, and NVIDIA Spectrum-X Ethernet networking. The idea is simple and expensive to ignore: when a language model processes a prompt, it builds intermediate key-value states — its working memory of the conversation. Recomputing those states for every request wastes GPU time, so the platform persists them in shared high-speed storage, where later requests can reuse them instead of starting over. In joint testing with a 120-billion-parameter model, persistent KV cache delivered up to 56x faster time-to-first-token at 130,000-token prompts: as input length grew from 30,000 to 130,000 tokens, time-to-first-token rose by only 0.377 seconds with the cache, compared with 29.55 seconds without it. The measurements come from an IBM Redbook reference architecture, “Context without Limits,” published June 5, 2026 and updated August 20, 2026, which reports 32.14 seconds for GPU recomputation at 130,000 tokens versus 0.570 seconds using the storage-backed cache. A separate 200-request run, using 28 concurrent connections across 100 unique prompts representing 24 million tokens and 825 GB of KV cache data, reported throughput rising from 0.19 to 4.26 requests per second and total processing time falling from 1,048.56 to 46.94 seconds.</p>
+
+  <h2>Why it matters</h2>
+  <p>The launch matters because long context is where AI's costs now live. Multi-turn agents, coding assistants and retrieval-augmented generation all re-read enormous prompts, and every re-read is GPU time billed twice for the same math. A shared cache tier changes the economics: it sits in NVIDIA's memory hierarchy as a persistent layer — GPU memory, DRAM, SSDs and shared flash — and the platform falls under NVIDIA's Inference Context Memory Storage Platform initiative, introduced at CES 2026. The three-way structure is also the story: Supermicro brings the storage hardware, IBM the storage software, NVIDIA the inference framework and networking — no single vendor owns the fix. The honesty notes matter too. The figures come from joint vendor testing on a specific model, prompt mix, concurrency level and network — one Supermicro GPU client node with four NVIDIA RTX PRO 6000 GPUs against an eight-node Petascale cluster — not independent customer results, and the release states no revenue, orders or pricing tied to the product.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you serve models, the question this launch raises is about your cache strategy, not your GPU count. Ask whether your inference stack reuses context across requests — and across users, where the same documents get re-read hundreds of times — or whether every request pays the full prefill cost. If you run long-context agents or RAG, the 56x figure is a ceiling measured on 130,000-token prompts, not a promise for your traffic; test on your own prompt mix before budgeting around it. If you buy infrastructure, note the shape of the deal: the fix is a storage tier, not a faster chip, which means the next performance jump in your stack may come from your storage vendor, not your GPU vendor. And if you are a developer, the practical takeaway is free: cache what you can, because the most expensive token is the one you compute twice.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>Model launches grab headlines; the economics of serving them decide who profits. A 56x speedup that comes from remembering instead of recomputing is the cheapest kind of performance — no new chip, no new model, just not doing the same work twice. The three vendors selling it are also the three vendors whose products make it possible, so treat the number as a ceiling, not a guarantee. But the direction is hard to argue with: as prompts get longer and agents get chattier, the memory of what was already computed becomes infrastructure. Is your AI doing the same math twice? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Supermicro #NVIDIA #IBM #KVCache #AIInference #DataCenter #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Supermicro press release via PR Newswire / Channel NewsAsia (November 5, 2026), Unite.AI and Crypto Briefing. Performance figures are from the companies' joint testing and the IBM Redbook “Context without Limits”; no revenue, orders or pricing were disclosed.. Published November 6, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
