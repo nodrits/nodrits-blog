@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grok's API Text Is Now Invisibly Watermarked — Here's Why | Nodrits Blog</title>
+<meta name="description" content="From November 7, 2026, text from seven Grok API models carries an invisible watermark by default. SpaceXSI switched it on to comply with the EU AI Act.">
+<meta name="keywords" content="Grok watermark, xAI watermark, AI text watermarking, EU AI Act Article 50, SpaceXSI, Grok API">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/grok-api-invisible-text-watermark.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grok's API Text Is Now Invisibly Watermarked — Here's Why">
+<meta property="og:description" content="From November 7, 2026, text from seven Grok API models carries an invisible watermark by default. SpaceXSI switched it on to comply with the EU AI Act.">
+<meta property="og:image" content="../assets/img/grok-api-invisible-text-watermark-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Grok's API Text Is Now Invisibly Watermarked — Here's Why</h1>
+  <p class="meta">November 8, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/grok-api-invisible-text-watermark-card.png" alt="Grok's API Text Is Now Invisibly Watermarked — Here's Why">
+
+  <p>Every word Grok writes through its API now carries a mark you cannot see. From November 7, 2026, text from seven Grok models is watermarked by default — SpaceXSI's answer to the EU AI Act's transparency rules.</p>
+
+  <h2>What happened</h2>
+  <p>SpaceXSI, the company behind Grok, documented the change on its Output Watermarking developer page (last updated October 31, 2026) and switched it on November 7, the date it had promised. The watermark applies to text from grok-4.7, grok-4.6, grok-4.5, grok-4.3 and the three grok-4.20 variants (reasoning, non-reasoning and multi-agent), on every SpaceXSI API endpoint — the Responses API and the Chat Completions API, including structured outputs and tool-call arguments. Nothing is added to the text: no hidden characters, no markup, no extra tokens. The mark is a statistical pattern in word choice, applied during generation by slightly shaping which tokens the model selects. Developers can check the x-watermark response header — true means that output was watermarked. Team admins can switch watermarking off per model in the console, but only after confirming a legal exception applies and accepting sole responsibility for any remaining disclosure obligations; every change is logged in the team audit trail.</p>
+
+  <h2>Why it matters</h2>
+  <p>AI-generated text is becoming detectable by design, not by promise. Article 50 of the EU AI Act requires providers of AI systems that generate synthetic text to ensure outputs are marked in a machine-readable format and detectable as artificially generated — and its transparency obligations became enforceable on August 2, 2026. Anthropic already watermarks Claude's text, and its models launched on or after August 2 watermark from day one. The industry is converging: watermarking is no longer a research demo, it is a compliance default. Detection is statistical — text is scored as watermarked, not watermarked or uncertain, and longer text gives a stronger signal — and detectors are limited to approved organisations such as regulators, researchers, media and fact-checkers.</p>
+
+  <h2>What it means for you</h2>
+  <p>If your product calls the Grok API, its outputs are marked automatically — you changed nothing, and your code needs no change either; there is no new request parameter. Check the x-watermark header if you want to confirm. If you are a team admin, the opt-out exists, but it is deliberately heavy: confirming a legal exception and taking sole responsibility is the price of turning compliance off. And note the scope: the docs cover the API only. They say nothing about Grok on X or the grok.com chat interface.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>Invisible marks will not stop misuse on their own — short text, factual text and code carry little or no mark. But they give the people checking a real signal, and that beats disclosure by promise. Expect every major model to follow. The watermark era has begun. Should every AI's words be watermarked by law? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Grok #xAI #AIWatermark #EUAIAct #AITransparency #AISafety #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: SpaceXSI (xAI) Output Watermarking documentation (updated October 31, 2026); The Decoder (November 4, 2026).. Published November 8, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Dreams Between Sessions — Anthropic's Agent Memory Breakthrough | Nodrits Blog</title>
+<meta name="description" content="Anthropic's November 6, 2026 research shows Claude re-reading its own logs while idle — “dreaming” — to fix wrong notes and build wikis. Memory lifted Opus 5.5 from 0.655 to 0.838 on CL-Bench.">
+<meta name="keywords" content="Claude memory, Anthropic dreaming, agent memory, Claude Code memory, AI agents, CL-Bench">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/claude-dreams-agent-memory-anthropic.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude Dreams Between Sessions — Anthropic's Agent Memory Breakthrough">
+<meta property="og:description" content="Anthropic's November 6, 2026 research shows Claude re-reading its own logs while idle — “dreaming” — to fix wrong notes and build wikis. Memory lifted Opus 5.5 from 0.655 to 0.838 on CL-Bench.">
+<meta property="og:image" content="../assets/img/claude-dreams-agent-memory-anthropic-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Claude Dreams Between Sessions — Anthropic's Agent Memory Breakthrough</h1>
+  <p class="meta">November 8, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/claude-dreams-agent-memory-anthropic-card.png" alt="Claude Dreams Between Sessions — Anthropic's Agent Memory Breakthrough">
+
+  <p>Claude now dreams between sessions — and it remembers you. Anthropic published “The components of agent memory” on November 6, 2026, showing how Claude re-reads its own logs while idle, corrects notes that turned out wrong, and builds linked wikis from what it learned.</p>
+
+  <h2>What happened</h2>
+  <p>Anthropic's engineering post by Lance Martin splits agent memory into four layers — raw transcripts at the bottom, notes, representations, and a small block of injected context at the top — and measures each one. Memory, as Anthropic defines it, is knowledge Claude gains from experience that it retains between sessions, saved as files it can read later. The centrepiece is dreaming: offline time, while the agent is idle, in which Claude re-reads transcripts, compares them with the notes it saved, corrects notes that do not match, merges duplicates, and sometimes rebuilds the notes into a linked wiki. Anthropic credits the idea of sleep-time compute to researchers at Letta and UC Berkeley. The headline test used about 350,000 internal files from Stainless, a company Anthropic acquired in May — roughly 420 million tokens of company documents. Claude built a wiki from that corpus over repeated dreaming sessions, then answered 25 questions from it: wiki-only performance rose from 13% to 48% of graded criteria as dreaming scaled from 2 to 128 sessions, and with both search and wiki available it rose from 54% to 61%, against 53% for search alone, saving about 20,000 tokens per question. On the CL-Bench 1.0 database task, memory lifted Claude Opus 5.5 from 0.655 to 0.838, Sonnet 5.5 from 0.644 to 0.833, Opus 4.7 from 0.383 to 0.700 and Sonnet 5 from 0.306 to 0.610. The most vivid test is Pokémon Red: Sonnet 3.7 wrote down almost everything — 413 memory files across 225 folders — and earned one badge; Fable 5 kept nine files plus one dashboard and earned four. Dreaming even corrected a wrong PokéCenter location by checking the note against the transcript; without the fix, Claude looped three times and never reached Cerulean City. This is research, not a product launch: the post describes research setups on Managed Agents and Claude Code's auto memory, and does not announce dreaming as a general feature.</p>
+
+  <h2>Why it matters</h2>
+  <p>Memory is the next frontier after models. An agent that remembers gets dramatically better at long-running work — the CL-Bench jump from 0.655 to 0.838 is the size of a model generation, delivered by memory alone. The Pokémon result is the deeper lesson: what you remember matters more than how much you remember. Nine well-chosen files beat 413 indiscriminate ones. But the research is unusually honest about the risks: dreaming costs compute, checking every memory continuously is not practical, and a wrong note injected into every new session can propagate its error into every future task. The always-loaded memory layer must stay small — Claude Code loads only the first 200 lines or 25 KB of its MEMORY.md as an index — and Anthropic suggests focusing dreaming on information likely to change, tuned by how often memories are accessed.</p>
+
+  <h2>What it means for you</h2>
+  <p>The agent that knows your project will beat the one that re-reads it every time. Expect memory to become a feature you manage, like a database — not a hidden trick. If you build agents, the design rule Anthropic offers is worth stealing: tell the agent what memory is for, but not how to use it. And if you use Claude Code, the MEMORY.md file in your project is already the mechanism — keep it short, keep it true, and treat it as the index to everything else.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The honest part of this research is the warning: dreaming costs compute, and a bad note can haunt every future session if nobody checks it. Memory needs maintenance, not just storage — that is the real lesson here. Would you let an AI remember everything about your work? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Claude #Anthropic #AgentMemory #AIAgents #ClaudeCode #AIResearch #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Anthropic, “The components of agent memory,” Engineering Blog (November 6, 2026); Interesting Engineering (November 7, 2026). Figures are Anthropic's own measurements; the Pokémon comparison covers one run per model.. Published November 8, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepMind's AI Agents Found Cracks in Legacy RSA Encryption | Nodrits Blog</title>
+<meta name="description" content="Google DeepMind announced on November 6, 2026 that human-guided AI agents found two weaknesses in legacy 1024-bit RSA. Modern 2048-bit keys are not affected.">
+<meta name="keywords" content="DeepMind RSA, 1024-bit RSA, AI cryptanalysis, encryption security, Google DeepMind, cybersecurity">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/deepmind-ai-agents-1024-bit-rsa-weaknesses.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DeepMind's AI Agents Found Cracks in Legacy RSA Encryption">
+<meta property="og:description" content="Google DeepMind announced on November 6, 2026 that human-guided AI agents found two weaknesses in legacy 1024-bit RSA. Modern 2048-bit keys are not affected.">
+<meta property="og:image" content="../assets/img/deepmind-ai-agents-1024-bit-rsa-weaknesses-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>DeepMind's AI Agents Found Cracks in Legacy RSA Encryption</h1>
+  <p class="meta">November 8, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/deepmind-ai-agents-1024-bit-rsa-weaknesses-card.png" alt="DeepMind's AI Agents Found Cracks in Legacy RSA Encryption">
+
+  <p>AI just found new cracks in old encryption — and your bank is safe. Google DeepMind announced on November 6, 2026 that human-guided AI agents found two weaknesses in legacy 1024-bit RSA, the older encryption standard still hiding in old devices and signed firmware.</p>
+
+  <h2>What happened</h2>
+  <p>DeepMind announced the findings on November 6, 2026, shared by Pushmeet Kohli, DeepMind's VP of Science. The work was led by DeepMind researchers Dj Dvijotham and Abhradeep Thakurta, with cryptography experts Nadia Heninger of UC San Diego and Inria and Emmanuel Thomé of Inria. The first weakness enables forgery of digital signatures: once an attacker controls about half of the signed block or more, the padding adds little protection. In a sandbox, the agents reproduced a forgery on an already-solved 1024-bit benchmark key with 3.5 times less CPU time than previous work, and for short inputs like a 32-byte fingerprint, DeepMind estimates a new method about 1,600 times faster in theory. The second finding is a new batch algorithm that cuts the average cost of factoring each additional 1024-bit key by about 30 times compared with earlier batch methods. DeepMind says it has published full technical papers on both results so the wider security community can check and build on them. The headline caveat comes first: modern RSA deployments using 2048-bit or larger keys are not affected by these specific findings.</p>
+
+  <h2>Why it matters</h2>
+  <p>AI is now doing cryptanalysis — finding attacks humans had missed. Nobody should be using 1024-bit RSA: NIST disallowed it for generating new signatures back in 2013 under SP 800-131A. But old devices and signed firmware still do, and the clock on that legacy crypto just sped up — attacking these systems may take far less computing effort than cryptographers assumed. The deeper story is the method: human-guided agents did the exploratory work in weeks, with humans directing. That is a new kind of research partner for security work, and it cuts both ways — the same capability that finds the weakness can be used to check the fix. DeepMind's decision to publish the papers openly is the right one: the security community can verify, reproduce and build on the work.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you ship hardware, firmware or old systems, audit for 1024-bit RSA now — this is a retirement notice for legacy encryption, not a reason to panic. Online banking, messaging apps, software updates and digital currencies are unaffected: they use 2048-bit or larger keys, and the findings do not threaten them. The practical takeaway is boring and important: retire legacy crypto on a schedule, before AI finds the next crack, not after.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>This is AI as a research partner, not a hacker — the findings were published openly for the security community to check. The lesson: retire legacy crypto before AI finds the next crack. Security now moves at the speed of the smartest researcher — human or machine. Is AI making encryption stronger — or weaker? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#DeepMind #Google #RSA #Encryption #CyberSecurity #AISecurity #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Google DeepMind announcement via Pushmeet Kohli (November 6, 2026); Crypto Briefing (November 6, 2026). Figures are DeepMind's reported claims; the 1,600x figure is a theoretical estimate and the measured result is the 3.5x CPU saving on the solved benchmark key.. Published November 8, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
