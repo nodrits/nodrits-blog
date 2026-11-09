@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Hired the Hackers Who Broke Into It | Nodrits Blog</title>
+<meta name="description" content="OpenAI announced on November 6, 2026 a partnership with Hacktron, the security firm whose researchers chained two flaws in July to reach employee ChatGPT accounts and internal repositories. The focus: third-party connections.">
+<meta name="keywords" content="OpenAI Hacktron, Hacktron OpenAI breach, Daybreak Red, AI security, bug bounty, OpenAI security partnership">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/openai-hires-hacktron-breach.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenAI Hired the Hackers Who Broke Into It">
+<meta property="og:description" content="OpenAI announced on November 6, 2026 a partnership with Hacktron, the security firm whose researchers chained two flaws in July to reach employee ChatGPT accounts and internal repositories. The focus: third-party connections.">
+<meta property="og:image" content="../assets/img/openai-hires-hacktron-breach-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>OpenAI Hired the Hackers Who Broke Into It</h1>
+  <p class="meta">November 9, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/openai-hires-hacktron-breach-card.png" alt="OpenAI Hired the Hackers Who Broke Into It">
+
+  <p>They broke into OpenAI in under 72 hours. Now OpenAI has hired them. On November 6, 2026, OpenAI announced a partnership with security firm Hacktron to find vulnerabilities in its own systems — the same firm whose researchers chained two flaws in July to reach employee ChatGPT accounts and internal code repositories.</p>
+
+  <h2>What happened</h2>
+  <p>OpenAI announced the partnership on its official blog on November 6, 2026. OpenAI engineers and Hacktron researchers will jointly select high-priority areas to test, with a focus on how OpenAI systems interact with third-party services. As part of the deal, Hacktron gets expanded access to OpenAI's frontier models through Daybreak Red, OpenAI's program for authorized vulnerability research, with identity verification, monitoring and approved-use controls. The relationship began in OpenAI's Security Bug Bounty program. On July 25, 2026, Hacktron researchers chained two critical vulnerabilities — remote code execution in the community forum's image-processing path, plus an OpenAI single sign-on issue — to compromise multiple OpenAI employees' ChatGPT accounts, reaching toward internal repositories and a connected GitHub integration, before stopping at a harmless proof pull request. Hacktron says OpenAI confirmed a fix roughly 14 hours after the report; OpenAI paid a 6,500 dollar bounty on September 1. Hacktron used Anthropic's Claude as an auxiliary tool during the penetration test, according to its own write-up. Coverage of the announcement also reports OpenAI has raised its bug bounty rewards.</p>
+
+  <h2>Why it matters</h2>
+  <p>Hacktron's July chain is the template for how these systems actually fall: not through the model, but through the seams — a forum's image library, a sign-on flow, a connected integration — where access granted to one system silently carries into the next. OpenAI handing its own attack surface to the firm that proved that point, with cyber-capable models included, is the defender version of the same insight. The same week, researchers found hundreds of Artex AI penetration-testing servers reachable on the open web without access controls, per TechCrunch — offensive AI tooling left unsecured, in the same week OpenAI formalized its Hacktron partnership. Agents are getting more connected, more capable and more worth locking down, all at the same time.</p>
+
+  <h2>What it means for you</h2>
+  <p>Map your own seams before someone else does. List every third-party connection your AI tools hold — sign-on providers, GitHub and Drive integrations, MCP servers, connected apps in your agents — and remove the ones you no longer use; each dormant connection is a path like the one Hacktron chained. Where a connection stays, scope it to the least access that works, and make sure a compromise of the least important connected service cannot sign into the most important one. And if you run agents unattended, set them to deny-and-continue rather than prompt-and-hang.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The best security hire is the person who already found the hole — and told you about it. Bug bounties work when the finder is treated as a partner, not an enemy. Should every AI lab hire the hackers who broke in — or is handing them frontier models a step too far? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#OpenAI #Hacktron #CyberSecurity #BugBounty #AISecurity #DaybreakRed #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: OpenAI, “Partnering with Hacktron to find vulnerabilities in OpenAI's systems” (November 6, 2026); Hacktron's September 13, 2026 write-up; WebProNews (November 8, 2026); AIFreshSignal briefing (November 8, 2026). The July breach details are from Hacktron's own account; the raised bounty rewards are as reported in coverage.. Published November 9, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ai2's ToyBlocks: A Robot World Where Failures Can Be Traced | Nodrits Blog</title>
+<meta name="description" content="The Allen Institute for AI released ToyBlocks on November 6, 2026 — an open robot world of a simulated arm and labeled blocks, with 85,336 demonstrations, where failures can be diagnosed instead of just counted.">
+<meta name="keywords" content="Ai2 ToyBlocks, Allen Institute AI, FoundationWorlds, robot learning, sim-to-real, Molmo2, robot benchmark">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/ai2-toyblocks-robot-world.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ai2's ToyBlocks: A Robot World Where Failures Can Be Traced">
+<meta property="og:description" content="The Allen Institute for AI released ToyBlocks on November 6, 2026 — an open robot world of a simulated arm and labeled blocks, with 85,336 demonstrations, where failures can be diagnosed instead of just counted.">
+<meta property="og:image" content="../assets/img/ai2-toyblocks-robot-world-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Ai2's ToyBlocks: A Robot World Where Failures Can Be Traced</h1>
+  <p class="meta">November 9, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/ai2-toyblocks-robot-world-card.png" alt="Ai2's ToyBlocks: A Robot World Where Failures Can Be Traced">
+
+  <p>This robot learned in a world made of toy blocks — and it fails honestly. The Allen Institute for AI released ToyBlocks on November 6, 2026: the first environment in its FoundationWorlds framework, and a genuinely open one, with simulation, code, dataset and two trained models all public.</p>
+
+  <h2>What happened</h2>
+  <p>ToyBlocks is deliberately small: a simulated robot arm and labeled blocks on a tabletop, matching Ai2's real Seattle lab, so that experiments are repeatable and failures diagnosable. The initial dataset holds 85,336 long-horizon demonstrations covering nearly 1,600 hours of robot execution and 144 million frames, generated automatically by planners at up to 24 times real-time on one GPU. The released policy is two-level: Molmo2-4B-tb plans from a camera image and a text goal, and ManiFlow-tb turns the plan into actions. The results are honestly mixed, and Ai2 says so: the hierarchical system succeeded in 55.5 percent of simulated episodes and 50.0 percent of physical episodes on a real Franka arm, trained entirely in simulation — while ManiFlow, pi0.5 and MolmoAct 2 all showed poor generalization despite large-scale pretraining. A second release with more skills and integrated reinforcement learning is planned, but is not in this package.</p>
+
+  <h2>Why it matters</h2>
+  <p>Robotics researchers get a benchmark where a failure can be decomposed — swap in an oracle planner or an oracle actor and find out whether the decision or the movement was wrong — instead of another leaderboard number. Everyone else should take the generalization finding seriously: models that perform inside their training setup and fall apart outside it is the same failure mode appearing in agents generally, here measured cleanly because the world is blocks, not the open web. Ai2's conclusion is blunt: action-model generalization remains far from solved. A benchmark that reports its failures honestly is worth more than a leaderboard that hides them.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you work in robotics or sim-to-real research, ToyBlocks is free to download and run today — start with the easy, medium and hard dataset splits and the withheld-task evaluations, and compare your policy's planning errors against its execution errors using the oracle-swap setup. If you do not, the transferable lesson is the audit method: when your own agent fails, separate “chose the wrong action” from “executed the right action badly” before you retrain anything.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>Fifty percent on a real arm, trained only in simulation, is the honest number — and the starting point, not the finish line. The robot that can say why it failed is the one that will eventually stop failing. If an AI aces the demo but fails in the real world, is that a model problem — or a testing problem? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Ai2 #ToyBlocks #Robotics #RobotLearning #SimToReal #AIResearch #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Allen Institute for AI (Ai2), ToyBlocks release (November 6, 2026); Unite.AI (November 6, 2026); AIFreshSignal briefing (November 8, 2026). Success rates and dataset figures are Ai2's own reported measurements.. Published November 9, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>

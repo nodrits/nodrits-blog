@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code 2.1.319: Long Jobs Run in the Background Now | Nodrits Blog</title>
+<meta name="description" content="Anthropic released Claude Code 2.1.319 on November 6, 2026: MCP tool calls that run as tasks move to the background right away, and a new denyInsteadOfPrompting setting lets unattended runs skip permission prompts.">
+<meta name="keywords" content="Claude Code 2.1.319, MCP tasks, Anthropic Claude Code, denyInsteadOfPrompting, coding agents, MCP background">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/claude-code-2-1-319-background-mcp.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude Code 2.1.319: Long Jobs Run in the Background Now">
+<meta property="og:description" content="Anthropic released Claude Code 2.1.319 on November 6, 2026: MCP tool calls that run as tasks move to the background right away, and a new denyInsteadOfPrompting setting lets unattended runs skip permission prompts.">
+<meta property="og:image" content="../assets/img/claude-code-2-1-319-background-mcp-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>Claude Code 2.1.319: Long Jobs Run in the Background Now</h1>
+  <p class="meta">November 9, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/claude-code-2-1-319-background-mcp-card.png" alt="Claude Code 2.1.319: Long Jobs Run in the Background Now">
+
+  <p>Your coding agent just stopped waiting. Anthropic released Claude Code 2.1.319 on November 6, 2026: when an MCP server runs a tool call as a task, Claude Code now moves it to the background right away and tells Claude the result when it finishes — instead of blocking the whole session on a job that might run for twenty minutes.</p>
+
+  <h2>What happened</h2>
+  <p>Claude Code 2.1.319, released November 6, 2026, changes how long MCP jobs behave. Until this week, in most Claude Code sessions, Claude called a long-running MCP tool and the session sat inside that call; a fallback moved a call to the background only once it had run for two minutes. Now the call moves to the background immediately, with Claude told the result when it finishes — and an environment variable, CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND, restores the old wait-inside-the-call behavior. MCP tasks also leave their feature-flag gating behind in this release, so Bedrock, Vertex, Foundry and LLM-gateway setups get them too. Second, a new setting, permissions.denyInsteadOfPrompting, denies any tool call that would normally stop and wait for a permission prompt, and lets the turn continue — built for terminal sessions, subagents and teammates running unattended, where nobody is there to click Allow. The release also adds a claude-api latency-optimize command and fixes several permission-check bypasses, including a crafted environment prefix in Bash and a sandbox escape during worktree creation, per the changelog summaries.</p>
+
+  <h2>Why it matters</h2>
+  <p>Overnight jobs, CI pipelines, multi-agent teams — that is increasingly how Claude Code is used. Background MCP tasks remove a real friction: one slow report export or build no longer freezes the whole session. The deny-instead-of-prompting setting is the more consequential change, because it makes the safe failure mode the automatic one: an unattended agent that hits something it was not pre-approved to do now skips it and keeps working, instead of either hanging forever or, worse, being run with prompts disabled entirely to avoid the hang. The coding-agent race is now about who fails safest at 3 a.m., not just who writes the best code.</p>
+
+  <h2>What it means for you</h2>
+  <p>Update to 2.1.319, then do two things. For any unattended or scheduled Claude Code runs, turn on permissions.denyInsteadOfPrompting and pre-approve exactly the tools those runs need — anything else gets denied and the run continues, which is the behavior you want at 3 a.m. And if you use MCP servers with long-running tools, test one task-type call and confirm it backgrounds and reports back; if a workflow genuinely needs the result inline, set the disable variable for that workflow only. Note the scope: MCP tasks work in the terminal CLI. The VS Code extension and the desktop app do not have them yet.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The best coding-agent feature is the one that removes waiting — and the one that fails safe at 3 a.m. Deny-and-continue beats prompt-and-hang every single time nobody is there to click Allow. Would you trust a coding agent to run overnight with no one watching — or does deny instead of ask still feel too risky? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#ClaudeCode #Anthropic #MCP #CodingAgents #AICoding #DevTools #TechNews #NodritsSolutions</p>
+
+  <p class="sources">Sources: Anthropic Claude Code v2.1.319 changelog via GitHub release notes and Releasebot (November 6, 2026); AIFreshSignal briefing (November 8, 2026); ToolsNetwork release summary (November 6, 2026).. Published November 9, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
