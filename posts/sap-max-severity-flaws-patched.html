@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAP Patches Four Maximum-Severity Flaws That Let Attackers In With No Password | Nodrits Blog</title>
+<meta name="description" content="SAP patched four CVSS 10/10 flaws in NetWeaver, Web Dispatcher and Gateway — unauthenticated attackers could fully compromise systems remotely. Here is what was fixed and why it matters.">
+<meta name="keywords" content="SAP security flaws, SAP NetWeaver vulnerability, ICM2SHELL, PROXYGATE, CVE-2026-76964, CVE-2026-89103, CVSS 10 vulnerability, SAP patch November 2026, enterprise cybersecurity, SAP Gateway RCE">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/sap-max-severity-flaws-patched.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAP Patches Four Maximum-Severity Flaws That Let Attackers In With No Password">
+<meta property="og:description" content="SAP patched four CVSS 10/10 flaws in NetWeaver, Web Dispatcher and Gateway — unauthenticated attackers could fully compromise systems remotely. Here is what was fixed and why it matters.">
+<meta property="og:image" content="../assets/img/sap-max-severity-flaws-patched-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>SAP Patches Four Maximum-Severity Flaws That Let Attackers In With No Password</h1>
+  <p class="meta">November 10, 2026 · Nodrits Solutions · 4 min read</p>
+  <img class="hero-img" src="../assets/img/sap-max-severity-flaws-patched-card.png" alt="SAP Patches Four Maximum-Severity Flaws That Let Attackers In With No Password">
+
+  <p>SAP has patched four maximum-severity vulnerabilities in the software that runs some of the world's largest companies — and the worst of them need no username, no password and no click from anyone inside the company. Rated a perfect 10 out of 10 on the CVSS severity scale, the flaws could let an unauthenticated attacker take full control of affected systems remotely. The patches landed in SAP's November 2026 security updates, alongside 31 other fixes.</p>
+
+  <h2>What happened</h2>
+  <p>SAP's November 2026 security updates fix 35 vulnerabilities in total, but four of them stand out: all four carry the maximum CVSS score of 10.0, and SAP says unauthenticated attackers can exploit them to fully compromise targeted systems remotely.
+
+Two of the flaws sit in the NetWeaver Application Server ABAP — a memory corruption issue in the Internet Communication Manager (CVE-2026-76964) and a missing authentication flaw in the SAML2 Service Provider component (CVE-2026-120017). NetWeaver is the core application platform underpinning SAP's business software, handling application integration, authentication, user management and data processing.
+
+The other two affect SAP Gateway (CVE-2026-89103, a broken access control weakness) and SAP Web Dispatcher (CVE-2026-89126, a memory corruption issue). Gateway is the framework that lets external applications connect securely to SAP backends, while Web Dispatcher — deployed in almost every enterprise SAP environment — acts as a load balancer and reverse proxy for web requests entering an SAP system.
+
+Cybersecurity firm Onapsis, which found and reported three of the four issues, tracks the two memory corruption flaws as "ICM2SHELL" and the Gateway flaw as "PROXYGATE".</p>
+
+  <h2>Why it matters</h2>
+  <p>Onapsis describes ICM2SHELL as turning "a routine part of web traffic into a point of ingress for attackers," resulting in remote code execution against the component that faces the network by design — "no SAP user, no password and no user interaction."
+
+PROXYGATE is arguably worse: it works by convincing the SAP Gateway that an unauthenticated, external attacker is one of the company's own internal application servers. Again, no SAP user, no password and no user interaction — yet the attacker gains full control of the SAP system as the account that owns the installation. On a production ERP system, Onapsis warns, that means direct exposure of business data, transaction integrity and the availability of critical business applications.
+
+The scale is what makes this a front-page security story. SAP reported revenues exceeding €36 billion in fiscal year 2025 and serves 99 of the 100 largest companies worldwide. A flaw that needs no credentials in the software running those companies' core business systems is exactly the kind of weakness attackers hunt for.
+
+This is also a pattern, not a one-off. SAP patched another maximum-severity flaw in its Commerce Cloud platform in August 2026, which threat intelligence firm Defused flagged as actively exploited in attacks days after the patch. Two more maximum-severity flaws followed in September and October. The US Cybersecurity and Infrastructure Security Agency (CISA) has flagged 14 SAP security flaws as actively exploited since November 2021, three of which ransomware groups have also abused in the wild.</p>
+
+  <h2>What it means for you</h2>
+  <p>If your company runs SAP — and if you work with clients who do — the message is simple: apply the November 2026 patches now, starting with the NetWeaver, Web Dispatcher and Gateway components. Maximum-severity, unauthenticated flaws in internet-facing components are the first thing attackers scan for once patches are public, and SAP flaws have a documented history of being exploited within days.
+
+For everyone else, this is a reminder of how much of the global economy runs on a handful of enterprise platforms. When a flaw like this appears, it is not one company's problem — it is a supply-chain event. Check whether your vendors and partners run affected SAP components, and ask them to confirm they are patched.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>Four perfect-10 flaws, no password needed, in the software behind 99 of the world's 100 biggest companies — that is about as serious as a patch announcement gets. The good news is the fixes exist today; the risk now is simply how fast they get applied. SAP flaws have been exploited within days of patching before, so the clock is already running.
+
+Would you trust a system where a stranger on the internet needs no login at all to take control? Drop your take below.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#SAP #SAPSecurity #NetWeaver #CyberSecurity #ICM2SHELL #PROXYGATE #Vulnerability #TechNews #AIUSA #USATech #NodritsSolutions</p>
+
+  <p class="sources">Sources: BleepingComputer (SAP patches ICM2SHELL and PROXYGATE maximum severity flaws, November 10, 2026), Onapsis research as cited by BleepingComputer, SAP November 2026 security updates, CISA Known Exploited Vulnerabilities data as cited by BleepingComputer. Published November 10, 2026.. Published November 10, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
