@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Hotel Giant Left Its Guests' Data Exposed — the Key Was Hidden in Its Own App | Nodrits Blog</title>
+<meta name="description" content="Wyndham acknowledged a cybersecurity incident after a researcher found a password hidden in the source code of its Android app — a credential that opened an internal database holding customer names, emails, member numbers and login tokens.">
+<meta name="keywords" content="Wyndham data breach, Wyndham cybersecurity incident, hotel data exposure, hardcoded password app, Salesforce database exposure, Wyndham rewards members data">
+<link rel="canonical" href="https://nodrits.github.io/nodrits-blog/posts/wyndham-customer-data-exposure.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Hotel Giant Left Its Guests' Data Exposed — the Key Was Hidden in Its Own App">
+<meta property="og:description" content="Wyndham acknowledged a cybersecurity incident after a researcher found a password hidden in the source code of its Android app — a credential that opened an internal database holding customer names, emails, member numbers and login tokens.">
+<meta property="og:image" content="../assets/img/wyndham-customer-data-exposure-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark">N</span><span>Nodrits<small>Blog</small></span></a>
+    <nav class="nav">
+      <a href="../index.html" class="active">Tech News</a>
+      <a href="https://nodrits.github.io/nodrits-website/">Services</a>
+      <a href="https://nodrits.github.io/nodrits-website/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <span class="tag">Tech News</span>
+  <h1>A Hotel Giant Left Its Guests' Data Exposed — the Key Was Hidden in Its Own App</h1>
+  <p class="meta">November 10, 2026 · Nodrits Solutions · 3 min read</p>
+  <img class="hero-img" src="../assets/img/wyndham-customer-data-exposure-card.png" alt="A Hotel Giant Left Its Guests' Data Exposed — the Key Was Hidden in Its Own App">
+
+  <p>A hotel giant left the keys to its guests' data sitting in plain sight — inside its own app. Wyndham has acknowledged a cybersecurity incident after security researcher Robert Wiggins, of What Security, found a password embedded in the source code of the company's Android app. That single credential opened the door to an internal company database holding customer names, email addresses and Wyndham member numbers — along with the login tokens that keep customers signed in to their apps. The database held millions of entries, and Wyndham cannot say whether anyone else ever used the key before it was revoked.</p>
+
+  <h2>What happened</h2>
+  <p>Wiggins told TechCrunch exclusively that the password was sitting in the source code of Wyndham's Android app, and that it granted access to an internal company database hosted by tech company Salesforce. The database exposed personal information including customer names, email addresses and Wyndham member numbers, and it also stored customer login tokens — JWTs — that keep customers logged in to their apps without repeatedly entering their passwords. The database also contained Wyndham files and documents. According to Wiggins, the database had millions of entries, but he was unable to determine an accurate number of exposed customer records; Wyndham touts some 129 million enrolled rewards members. Wiggins said Wyndham had no way to report security flaws, so he asked TechCrunch for help alerting the company. Soon after TechCrunch made contact with Wyndham's cybersecurity staff, the exposed credential was revoked, preventing any further access. A Wyndham spokesperson told TechCrunch: “Our team has taken steps to address the issue,” and added that “Our security teams have no evidence of any unauthorized access” — without providing further details. The spokesperson would not say whether the company had the technical means, such as server logs, to determine if anyone had access to the database before Wiggins' discovery, would not say how long the password was embedded in the app or how it plans a long-term fix, and would not say whether it planned to notify affected customers or disclose the incident to U.S. regulators such as the Securities and Exchange Commission, as public companies are required to do for material cybersecurity incidents. Wyndham cybersecurity director Michael Francess told TechCrunch that researchers can alert security@wyndham.com with details of potential security issues. TechCrunch notes this is the latest known security incident at Wyndham in recent years.</p>
+
+  <h2>Why it matters</h2>
+  <p>A hardcoded credential is one of the oldest mistakes in software — and one of the hardest to excuse at this scale. Anyone who downloaded the app could, in principle, have pulled the password from its source code and walked straight into the database: no phishing, no exploit chain, no zero-day required. The login tokens make it worse than a simple name-and-email leak, because a stolen token can keep an attacker signed in as a customer. And the company's own answers leave the biggest question open: Wyndham says it has no evidence of unauthorized access, but it would not say whether it can even tell if someone got in. “No evidence” is not the same as “no access” when the logging itself is in question. For a company with 129 million rewards members, the gap between those two statements is the story. It is also a reminder that the hospitality industry keeps showing up in breach headlines — and that the fix here was not a patch or a product, it was revoking one credential that should never have shipped.</p>
+
+  <h2>What it means for you</h2>
+  <p>If you have a Wyndham Rewards account, the practical steps are simple and worth doing now: change your Wyndham password, and if you reused that password anywhere else, change it there too. Check your account for any bookings, redemptions or profile changes you do not recognise, and turn on any login alerts the account offers. If you run a business that ships an app, this is the audit to run this week: scan your own app's source code and shipped builds for hardcoded credentials, API keys and tokens — they are trivially extractable from any app a customer can download — and move every secret behind a server-side call. And if you are a security researcher, note the disclosure gap: Wiggins said Wyndham had no way to report the flaw, which is why he went to the press. A public security contact and a vulnerability disclosure policy are cheap insurance against the next researcher finding your keys in your code.</p>
+
+  <h2>The Nodrits take</h2>
+  <p>The most dangerous vulnerabilities are not always the clever ones. A password baked into a customer app, a database with millions of entries behind it, and no clear way for a researcher to report it — that is a chain of small, ordinary failures adding up to a major exposure. Wyndham fixed the immediate problem by revoking the credential, but the unanswered questions — how long it sat there, who else may have used it — are the ones that decide whether this ends as a scare or a breach. Would you trust a hotel app with your data after a story like this? Tell us in the comments on today's post.</p>
+
+  <div class="cta-box">
+    <h3>Need a website, SaaS product or AI workflow built right?</h3>
+    <p>Nodrits Solutions designs, develops and automates for businesses in Pakistan, the USA, UK, UAE and Saudi Arabia.</p>
+    <a class="cta-btn" href="https://nodrits.github.io/nodrits-website/contact.html">Talk to Nodrits →</a>
+  </div>
+
+  <p class="tags">#Wyndham #DataBreach #CyberSecurity #HotelSecurity #DataPrivacy #AppSecurity #Salesforce #TechNews #USA #USATech #TechNewsUSA #NodritsSolutions</p>
+
+  <p class="sources">Sources: TechCrunch, “Hotel giant Wyndham exposed customer data after app security lapse” by Zack Whittaker (November 9, 2026). The 129 million rewards-member figure and the “no evidence of unauthorized access” statement are Wyndham's own; the credential discovery and database contents are the researcher's findings as reported by TechCrunch.. Published November 10, 2026.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nodrits Solutions — Websites, SaaS & AI workflows that grow businesses.</span>
+    <span><a href="../index.html">← All Tech News</a></span>
+  </div>
+</footer>
+</body>
+</html>
